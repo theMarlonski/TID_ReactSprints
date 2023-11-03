@@ -1,5 +1,6 @@
 import React from "react";
 import Post from "./HomePost";
+import "./HomeMainContent.css";
 import LouisPicture from "../Ressources/ProfilePictures/LouisPicture.svg";
 import IstanbulImage from "../Ressources/HomepagePosts/Istanbul.jpg";
 import LisaPicture from "../Ressources/ProfilePictures/LisaPicture.png";

@@ -1,0 +1,19 @@
+/* Post Component CSS */
+.post {
+    padding: 10px;
+    margin: 10px 20px; /* This margin adds space around the entire post */
+    position: relative;
+  }
+  
+  .post img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Add space between the image and the tags */
+  .post .tags {
+    margin-top: 10px; /* Adjust the margin as needed */
+  }
+  
+  
