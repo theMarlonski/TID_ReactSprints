@@ -1,0 +1,50 @@
+/* Header.css */
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between; /* Adjust alignment based on your design */
+    align-items: center;
+    padding: 10px;
+    background-color: #fff; /* White background */
+    border-bottom: 1px solid #ccc; /* Bottom border with light gray color */
+    position: fixed; /* Fixed position at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it's on top of other elements */
+    border-bottom-left-radius: 10px; /* Rounded border bottom left */
+    border-bottom-right-radius: 10px; /* Rounded border bottom right */
+  }
+  
+  /* Logo styling */
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo img {
+    width: 100px; /* Adjust logo width */
+  }
+  
+  /* Notification icon styling */
+  .notification-icon {
+    position: relative;
+  }
+  
+  .notification-icon span {
+    position: absolute;
+    top: -7.5px;
+    right: -7.5px;
+    background-color: red; /* Red background for notification count */
+    color: white; /* White text color for notification count */
+    border-radius: 50%; /* Circular shape */
+    padding: 3px 6px;
+    font-size: 12px; /* Font size for notification count */
+  }
+  
+  .notification-icon img {
+    width: 30px; /* Adjust notification icon width */
+  }
+  
