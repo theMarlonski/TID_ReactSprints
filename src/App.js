@@ -1,6 +1,6 @@
 import './App.css';
+import IconImg from "./Ressources/Icons/NotificationBell.svg"
 import Tags from './components/Tags.js';
-
 
 function App() {
   return (
