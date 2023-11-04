@@ -1,13 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from "./components/Header.js";
+import IconImg from "./Ressources/Icons/NotificationBell.svg"
 
 function App() {
   return (
-    <div className="Empty App">
-      <header className="App-header">
-      </header>
+    <div className="App">
+      <Header
+        IconPath = {IconImg}
+        />
     </div>
   );
 }
-
 export default App;
