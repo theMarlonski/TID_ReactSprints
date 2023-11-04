@@ -8,10 +8,10 @@ import ProfilePic from "../Ressources/ProfilePictures/OwnProfilePicture.png";
 function Footer() {
     return (
       <footer className="footer">
-        <div className="logo"><img src={Home} alt="HomeButton" /></div>
-        <div className="logo"><img src={Create} alt="CreatePost" /></div>
-        <div className="logo"><img src={Search} alt="SearchIcon" /></div>
-        <div className="logo"><img src={ProfilePic} alt="UserProfile" /></div>
+        <div className="footer-icon"><img src={Home} alt="HomeButton" /></div>
+        <div className="footer-icon"><img src={Create} alt="CreatePost" /></div>
+        <div className="footer-icon"><img src={Search} alt="SearchIcon" /></div>
+        <div className="profile-icon"><img src={ProfilePic} alt="UserProfile" /></div>
       </footer>
     );
   }
