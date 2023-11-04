@@ -1,0 +1,15 @@
+/* Image.css */
+
+.post-image img {
+    margin-top: 10px;
+    max-height: 1080px;
+    max-width: 1080px;
+    border-radius: 10px;
+  }
+
+ .flag {
+  font-size: 26px;
+  position: relative;
+  bottom: 40px;
+  left: 10px;
+ }
