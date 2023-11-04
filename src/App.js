@@ -1,12 +1,12 @@
 import './App.css';
-import Header from "./components/Header.js";
-import IconImg from "./Ressources/Icons/NotificationBell.svg"
+import Tags from './components/Tags.js';
+
 
 function App() {
   return (
     <div className="App">
-      <Header
-        IconPath = {IconImg}
+      <Tags
+        tags={["#tag1", "#tag2", "#tag3", "#tag4"]}
         />
     </div>
   );
