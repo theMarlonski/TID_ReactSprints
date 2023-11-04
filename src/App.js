@@ -1,10 +1,14 @@
 import './App.css';
-import Homepage from "./pages/Homepage.js";
+import Header from "./components/Header.js";
+import Icon from "./Ressources/Icons/HomeIcon.svg"
 
 function App() {
   return (
     <div className="App">
-      <Homepage />
+      <Header
+        showNotificationIcon={false}
+        alternativeIconSrc = {Icon}
+        />
     </div>
   );
 }
