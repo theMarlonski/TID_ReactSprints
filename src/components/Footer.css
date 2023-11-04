@@ -1,0 +1,16 @@
+footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff; /* Set the background color to white */
+  padding-bottom: 25px;
+  padding-top: 8px;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+
+.logo img {
+    color: #424B5A;
+    width: 25px; /* Set the width to match the other icons */
+    height: 25px; /* Set the height to match the other icons */
+  }

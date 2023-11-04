@@ -7,8 +7,6 @@ import ProfileImage2 from './Ressources/ProfilePictures/LouisPicture.svg';
 import ProfileImage3 from './Ressources/ProfilePictures/OguzPicture.png';
 import PostImage1 from './Ressources/HomepagePosts/Norway.jpg'
 import PostImage2 from './Ressources/HomepagePosts/Istanbul.jpg'
-import PostImage3 from './Ressources/HomepagePosts/Milano.jpg'
-
 
 function App() {
   return (
