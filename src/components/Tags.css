@@ -3,6 +3,8 @@
     flex-wrap: nowrap; /* Prevent wrapping of tags */
     overflow-x: auto; /* Enable horizontal scrolling for tags */
     line-height: 16px;
+    margin-top: -25px;
+    margin-bottom: 10px;
   }
   
 .tags .tag {

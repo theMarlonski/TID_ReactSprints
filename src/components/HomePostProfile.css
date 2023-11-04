@@ -1,0 +1,17 @@
+.profile {
+    display: flex; /* Display children (image and name) in a row */
+    align-items: center; /* Vertically center the items */
+    margin-top: 75px;
+  }
+  
+  .profile img {
+    width: 25px; /* Adjust the width of the profile image as needed */
+    height: 25px; /* Adjust the height of the profile image as needed */
+    border-radius: 50%;
+    margin-right: 5px; /* Add margin between the image and the name */
+  }
+  
+  .profile .name {
+    font-weight: bold;
+    font-size: 18px;
+  }
