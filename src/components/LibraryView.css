@@ -1,0 +1,10 @@
+/* LibraryView.css */
+.view {
+    display: flex;
+    /* align-items: center; Center vertically */
+    margin-left: 80px;
+  }
+  
+  .view img {
+    margin: 10px;
+  }
