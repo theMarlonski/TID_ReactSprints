@@ -1,0 +1,45 @@
+.follow-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Center horizontally */
+    top: 25px;
+  }
+  
+  .name {
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+  }
+  
+  .name p {
+    margin: 0;
+    font-weight: 700; /* bold font weight for text */
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0;
+  }
+  
+  .name img {
+    height: 12px;
+    margin-left: 5px;
+  }
+
+  .button {
+    background-color: #ADD8CE;
+    border-radius: 1px; /* Rounded corners for boxes */
+    padding: 5px 10px;;
+    margin-right: 10px; /* Adjust the margin to add space to the right */
+    height: 15px; /* Set the height */
+    text-align: center;
+  }
+  
+  .button p {
+    margin: 0;
+    font-weight: 400; /* Regular font weight for text */
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0;
+    text-align: center; /* Center-align the text horizontally */
+    vertical-align: middle; /* Center-align the text vertically (optional) */
+  }

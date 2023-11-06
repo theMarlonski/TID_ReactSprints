@@ -1,13 +1,23 @@
 import React from 'react';
 import './App.css';
-import Footer from "./components/Footer.js";
-import PostDetail from "./components/PostDetail.js"; // Import the PostDetail component
+import TopBarPost from './components/TopBarPost.js';
+import Footer from './components/Footer';
+import PostDetail from './components/PostDetail.js';
+import ProfilePictureDetailedPost from './components/ProfilePictureDetailedPost.js';
+import FollowNameContainer from './components/FollowNameContainer';
+import DetailedPostDescription from './components/DetailedPostDescription';
+import Tags from './components/Tags';
 
-function HellesPost() {
+function App() {
   return (
     <div className="App">
-      <PostDetail /> 
-      <Footer />
+      <PostDetail/>
+      <TopBarPost/>
+      <ProfilePictureDetailedPost/>
+      <FollowNameContainer/>
+      <DetailedPostDescription/>
+      <Tags tags={["Aurlandsdalen", "Norway", "Hiking", "Wild", "Spectacular Nature", "Outdoor"]}/>
+      <Footer/>
     </div>
   );
 }

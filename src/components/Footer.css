@@ -2,7 +2,7 @@ footer {
   display: flex;
   justify-content: space-around;
   background-color: #fff; /* Set the background color to white */
-  padding-bottom: 25px;
+  padding-bottom:12px;
   padding-top: 8px;
   position: fixed;
   bottom: 0px;
