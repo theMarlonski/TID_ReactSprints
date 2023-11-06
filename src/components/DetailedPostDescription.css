@@ -5,9 +5,10 @@
   }
   
   .description-section p {
+    color: #424B5A;
     position: relative;
     font-weight: 300;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 16px;
     letter-spacing: 0;
   }
