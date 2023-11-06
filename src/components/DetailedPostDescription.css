@@ -1,0 +1,13 @@
+.description-section {
+    padding:20px 15px; /* Add padding to the description section */
+    max-width: 100%; /* Ensure the description section takes the full width */
+    box-sizing: border-box; /* Include padding in the width calculation */
+  }
+  
+  .description-section p {
+    position: relative;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0;
+  }
