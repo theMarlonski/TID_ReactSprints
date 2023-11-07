@@ -2,15 +2,23 @@ footer {
   display: flex;
   justify-content: space-around;
   background-color: #fff; /* Set the background color to white */
-  padding-bottom:12px;
-  padding-top: 8px;
+  padding-bottom: 10px;
+  padding-top: 10px;
   position: fixed;
   bottom: 0px;
   width: 100%;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  margin-top: 30px;
 }
 
-.logo img {
+.footer-logo img {
     color: #424B5A;
-    width: 25px; /* Set the width to match the other icons */
-    height: 25px; /* Set the height to match the other icons */
+    width: 5px;
+    height: 5px;
   }
+
+.profile-icon img {
+  width: 35px;
+  height: 35px;
+}

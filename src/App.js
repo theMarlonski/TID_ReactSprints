@@ -8,6 +8,7 @@ import ProfileImage3 from './Ressources/ProfilePictures/OguzPicture.png';
 import PostImage1 from './Ressources/HomepagePosts/Norway.jpg'
 import PostImage2 from './Ressources/HomepagePosts/Istanbul.jpg'
 import PostImage3 from './Ressources/HomepagePosts/Milano.jpg'
+import Footer from './components/Footer.js';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         flag="🇮🇹"
         tags={["Milano", "Travel", "City", "Culture", "History"]}
         />
+      <Footer/>
     </div>
   );
 }
