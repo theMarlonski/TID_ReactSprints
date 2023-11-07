@@ -1,0 +1,18 @@
+  
+  .slide-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 35px;
+    left: 0;
+    right: 0;
+    margin-left: 37vw;
+    margin-right: 37vw;
+  }
+
+  .icon-slide img {
+    color: #D9D9D9;
+    width: 12px; /* Set the width to match the other icons */
+    height: 12px; /* Set the height to match the other icons */
+    }
