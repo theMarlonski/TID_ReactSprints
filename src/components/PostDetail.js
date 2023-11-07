@@ -1,12 +1,11 @@
 import React from 'react';
 import './PostDetail.css';
 import SlideBar from "./SlideBar.js";
-import Post from "../Ressources/DetailedPosts/Aurlandsdalen.jpg";
 
-function PostDetail() {
+function PostDetail(props) {
     return (
         <div className="image-section">
-            <img src={Post} alt="Post Image" />
+            <img src={props.DetailedPost} alt="PostDetail" />
             <SlideBar /> {/* Ensure that the SlideBar component is correctly placed here */}
         </div>
     );

@@ -3,12 +3,12 @@ import './FollowNameContainer.css'; // You can create a CSS file for your follow
 import Helle from "../Ressources/ProfilePictures/HellePicture.png";
 
 
-function FollowNameContainer() {
+function FollowNameContainer(props) {
   return (
     <div className="follow-section">
       <div className="name">
-        <img src={Helle} alt="HellesPicture" />
-        <p>Helle 🇳🇴</p>
+        <img src={props.ProfilePost} alt="ProfilePostDetail" />
+        <p>{props.ProfileName}</p>
       </div>
       <div className="button">
         <p>Follow</p>
