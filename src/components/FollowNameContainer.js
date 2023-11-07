@@ -1,13 +1,14 @@
 import React from 'react';
 import './FollowNameContainer.css'; // You can create a CSS file for your follow section styles and import it here.
-import Flag from "../Ressources/Icons/norwegian-flag.png";
+import Helle from "../Ressources/ProfilePictures/HellePicture.png";
+
 
 function FollowNameContainer() {
   return (
     <div className="follow-section">
       <div className="name">
-        <p>Helle</p>
-        <img src={Flag} alt="NorwegianFlag" />
+        <img src={Helle} alt="HellesPicture" />
+        <p>Helle 🇳🇴</p>
       </div>
       <div className="button">
         <p>Follow</p>

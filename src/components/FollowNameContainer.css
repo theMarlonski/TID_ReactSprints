@@ -1,34 +1,38 @@
 .follow-section {
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: space-between; /* Center horizontally */
-    top: 25px;
+    top: -25px;
   }
   
   .name {
     display: flex;
-    align-items: center;
-    padding: 5px 15px;
+    flex-direction: column;
+    align-items: start;
+    padding: 0px 15px;
+  }
+
+  .name img {
+    position: relative;
+    max-width: 50px;
+    max-height: 50px;
+    object-fit: cover;
   }
   
   .name p {
     margin: 0;
+    padding-top: 5px;
     font-weight: 700; /* bold font weight for text */
     font-size: 16px;
     line-height: 18px;
     letter-spacing: 0;
   }
-  
-  .name img {
-    height: 12px;
-    margin-left: 5px;
-  }
 
   .button {
     background-color: #ADD8CE;
     border-radius: 1px; /* Rounded corners for boxes */
-    padding: 5px 10px;;
+    padding: 5px 10px;
     margin-right: 10px; /* Adjust the margin to add space to the right */
     height: 15px; /* Set the height */
     text-align: center;
