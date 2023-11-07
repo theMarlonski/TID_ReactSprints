@@ -3,6 +3,8 @@
     flex-wrap: nowrap; /* Prevent wrapping of tags */
     overflow-x: auto; /* Enable horizontal scrolling for tags */
     line-height: 16px;
+    margin-top: -25px;
+    margin-bottom: 10px;
   }
   
 .tags .tag {
@@ -15,11 +17,13 @@
     display: flex; /* Align text and dot */
     align-items: center;
     background-color: rgb(173, 216, 206); /* Tag color in rgb */
+    color: rgb(66, 75, 90);
     white-space: nowrap; /* Prevent tag text from wrapping */
   }
   
   .tags .tag::before {
     content: '•'; /* Unicode for bullet (•) */
     margin-right: 5px; /* Adjust margin */
-    font-size: 20px; /* Adjust bullet size */
+    font-size: 45px; /* Adjust bullet size */
+    color: rgb(66, 75, 90);
   }

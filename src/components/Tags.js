@@ -3,13 +3,13 @@ import "./Tags.css";
 
 function Tags(props) {
   return (
-    <div className="tags">
+    <ul className="tags">
       {props.tags.map((tag, index) => (
-        <div className="tag" key={index}>
+        <li className="tag" key={index}>
           {tag}
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
 
