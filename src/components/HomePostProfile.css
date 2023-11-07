@@ -1,7 +1,7 @@
 .profile {
     display: flex; /* Display children (image and name) in a row */
     align-items: center; /* Vertically center the items */
-    margin-top: 75px;
+    margin-top: 25px;
   }
   
   .profile img {
