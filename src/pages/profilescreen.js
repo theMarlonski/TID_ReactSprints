@@ -1,14 +1,14 @@
 import './profilescreen.css';
-import Header from './components/Header.js';
-import Icon from './Ressources/Icons/Mail.png';
-import UserImage from './Ressources/UserProfilePicture/UserImage.png'
-import Infobox from './components/Infobox';
-import Statistics from './components/Statistics';
-import LibraryView from './components/LibraryView';
-import view1 from './Ressources/Icons/View_Grid.png';
-import view2 from './Ressources/Icons/View_List.png';
-import mapIcon from './Ressources/Icons/Location.png';
-import arrow from './Ressources/Icons/Chevron_down.png';
+import Header from '../components/Header.js';
+import Icon from '../Ressources/Icons/Mail.png';
+import UserImage from '../Ressources/UserProfilePicture/UserImage.png'
+import Infobox from '../components/Infobox.js';
+import Statistics from '../components/Statistics.js';
+import LibraryView from '../components/LibraryView.js';
+import view1 from '../Ressources/Icons/View_Grid.png';
+import view2 from '../Ressources/Icons/View_List.png';
+import mapIcon from '../Ressources/Icons/Location.png';
+import arrow from '../Ressources/Icons/Chevron_down.png';
 
 
 function profileScreen() {
