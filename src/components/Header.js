@@ -5,10 +5,10 @@ import Logo from "../Ressources/Icons/Logo.svg";
 function Header(props) {
     return (
       <header>
-        <div className="logo">
+        <div className="header-logo">
           <img src={Logo} alt="LocalsLogo" />
         </div>
-        <div className="icon">
+        <div className="header-icon">
           <img src={props.IconPath} alt="Icon" />
         </div>
       </header>

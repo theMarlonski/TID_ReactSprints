@@ -9,6 +9,7 @@ import PostImage1 from '../Ressources/HomepagePosts/Norway.jpg'
 import PostImage2 from '../Ressources/HomepagePosts/Istanbul.jpg'
 import PostImage3 from '../Ressources/HomepagePosts/Milano.jpg'
 import Footer from '../components/Footer.js';
+import './Homepage.css';
 
 function HomePage() {
   return (
@@ -16,27 +17,29 @@ function HomePage() {
       <Header
         IconPath={Icon}
       />
-      <HomePost
-        profileImage={ProfileImage1}
-        name="Lisa🇳🇴"
-        postImage={PostImage1}
-        flag="🇳🇴"
-        tags={["Norway", "Travel", "Nature", "Mountains", "Fjords"]}
-        />
-      <HomePost
-        profileImage={ProfileImage2}
-        name="Oguz🇹🇷"
-        postImage={PostImage2}
-        flag="🇹🇷"
-        tags={["Istanbul", "Travel", "City", "Culture", "History"]}
-        />
-      <HomePost
-        profileImage={ProfileImage3}
-        name="Louis🇬🇧"
-        postImage={PostImage3}
-        flag="🇮🇹"
-        tags={["Milano", "Travel", "City", "Culture", "History"]}
-        />
+      <div className="post-section">
+        <HomePost
+          profileImage={ProfileImage1}
+          name="Lisa🇳🇴"
+          postImage={PostImage1}
+          flag="🇳🇴"
+          tags={["Norway", "Travel", "Nature", "Mountains", "Fjords"]}
+          />
+        <HomePost
+          profileImage={ProfileImage2}
+          name="Oguz🇹🇷"
+          postImage={PostImage2}
+          flag="🇹🇷"
+          tags={["Istanbul", "Travel", "City", "Culture", "History"]}
+          />
+        <HomePost
+          profileImage={ProfileImage3}
+          name="Louis🇬🇧"
+          postImage={PostImage3}
+          flag="🇮🇹"
+          tags={["Milano", "Travel", "City", "Culture", "History"]}
+          />
+      </div>
       <Footer/>
     </div>
   );
