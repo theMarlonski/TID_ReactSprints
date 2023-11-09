@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../components/Header.js';
 import Icon from '../Ressources/Icons/NotificationBell.svg';
-import HomePosts from '../components/HomePost.js';
+import HomePost from '../components/HomePost.js';
 import ProfileImage1 from '../Ressources/ProfilePictures/LisaPicture.png';
 import ProfileImage2 from '../Ressources/ProfilePictures/LouisPicture.svg';
 import ProfileImage3 from '../Ressources/ProfilePictures/OguzPicture.png';
@@ -16,21 +16,21 @@ function HomePage() {
       <Header
         IconPath={Icon}
       />
-      <HomePosts
+      <HomePost
         profileImage={ProfileImage1}
         name="Lisa🇳🇴"
         postImage={PostImage1}
         flag="🇳🇴"
         tags={["Norway", "Travel", "Nature", "Mountains", "Fjords"]}
         />
-      <HomePosts
+      <HomePost
         profileImage={ProfileImage2}
         name="Oguz🇹🇷"
         postImage={PostImage2}
         flag="🇹🇷"
         tags={["Istanbul", "Travel", "City", "Culture", "History"]}
         />
-      <HomePosts
+      <HomePost
         profileImage={ProfileImage3}
         name="Louis🇬🇧"
         postImage={PostImage3}
