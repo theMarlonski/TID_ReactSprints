@@ -25,6 +25,7 @@ function HomePage() {
           flag="🇳🇴"
           tags={["Norway", "Travel", "Nature", "Mountains", "Fjords"]}
           />
+          
         <HomePost
           profileImage={ProfileImage2}
           name="Oguz🇹🇷"
