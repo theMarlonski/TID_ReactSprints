@@ -1,30 +1,31 @@
-.profileContainer {
+.profile-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 25px;
 
   }
 
-  .profileContainer .profileImage {
+  .profile-container .profile-image {
     width: 100px; /* Adjust the width of the profile image as needed */
     height: 100px; /* Adjust the height of the profile image as needed */
     border-radius: 50%;
     margin-right: 20px; /* Add margin between the image and the name */
   }
 
-  .profileContainer .name {
+  .profile-container .name {
     font-weight: bold;
     font-size: 16px;
     margin-bottom: 10px;
   }
 
-  .profileContainer .location {
+  .profile-container .location {
     font-size: 14px;
     margin-right: 10px;
     margin-left: -5px;
   }
 
-  .buttonStyle {
+  .button-style {
     padding: 5px 10px; /* Adjust padding */
     border-radius: 20px; /* Rounded corners for tags */
     margin: 0px 5px 0px 0; /* Adjust margins */
@@ -39,21 +40,21 @@
     font-weight: 600;
   }
 
-  .locationAndFollow {
+  .location-and-follow {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: -5px;
   }
 
-  .mapIcon {
+  .map-icon {
     /* Add styles for the map icon here */
     width: 24px; /* Adjust the width as needed */
     height: 24px; /* Adjust the height as needed */
     /* Add any other styles you want for the map icon */
   }
 
-  .buttonIcon {
+  .button-icon {
     width: 24px; /* Adjust the width of the image */
     height: 24px; /* Adjust the height of the image */
     margin-left: -5px;

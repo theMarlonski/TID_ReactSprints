@@ -4,15 +4,15 @@ import './UserProfile.css';
 
 function UserProfile(props) {
   return (
-    <div className="profileContainer">
-      <img class="profileImage" src={props.profileImage} alt="Profile Image" />
+    <div className="profile-container">
+      <img class="profile-image" src={props.profileImage} alt="Profile Image" />
       <div>
         <div className="name">{props.name}</div>
-        <div className="locationAndFollow">
-            <img className="mapIcon" src={props.mapIcon} alt="map icon" />
+        <div className="location-and-follow">
+            <img className="map-icon" src={props.mapIcon} alt="map icon" />
             <div className="location">{props.location}</div>
-            <button className="buttonStyle">
-              <img src={props.arrow} alt="Icon" className="buttonIcon" />
+            <button className="button-style">
+              <img src={props.arrow} alt="Icon" className="button-icon" />
               {props.text}
             </button>
         </div>

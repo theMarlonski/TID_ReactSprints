@@ -2,7 +2,7 @@ import './profilescreen.css';
 import Header from '../components/Header.js';
 import Icon from '../Ressources/Icons/Mail.png';
 import UserImage from '../Ressources/UserProfilePicture/UserImage.png'
-import Infobox from '../components/Infobox.js';
+import UserProfile from '../components/UserProfile.js';
 import Statistics from '../components/Statistics.js';
 import LibraryView from '../components/LibraryView.js';
 import view1 from '../Ressources/Icons/View_Grid.png';
@@ -17,7 +17,7 @@ function profileScreen() {
       <Header
         IconPath={Icon}
       />
-      <Infobox
+      <UserProfile
         profileImage={UserImage}
         name="Anna Hansson 🇮🇸"
         mapIcon={mapIcon}

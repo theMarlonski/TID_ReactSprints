@@ -1,14 +1,14 @@
 import React from 'react';
 import './HellesPost.css';
-import TopBarPost from './components/TopBarPost.js';
-import Flag from './Ressources/Icons/norwegian-flag.png';
-import Footer from './components/Footer';
-import PostDetail from './components/PostDetail.js';
-import DetailPost from "./Ressources/DetailedPosts/Aurlandsdalen.jpg";
-import FollowNameContainer from './components/FollowNameContainer';
-import Helle from "./Ressources/ProfilePictures/HellePicture.png";
-import DetailedPostDescription from './components/DetailedPostDescription';
-import Tags from './components/Tags';
+import TopBarPost from '../components/TopBarPost.js';
+import Flag from '../Ressources/Icons/norwegian-flag.png';
+import Footer from '../components/Footer';
+import PostDetail from '../components/PostDetail.js';
+import DetailPost from "../Ressources/DetailedPosts/Aurlandsdalen.jpg";
+import FollowNameContainer from '../components/FollowNameContainer';
+import Helle from "../Ressources/ProfilePictures/HellePicture.png";
+import DetailedPostDescription from '../components/DetailedPostDescription';
+import Tags from '../components/Tags';
 
 function HellesPost() {
   return (
