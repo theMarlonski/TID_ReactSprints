@@ -4,21 +4,21 @@ import "./Statistics.css";
 function Statistics(props) {
   return (
     <div className="statistics">
-      <div className="statisticBox">
+      <div className="statistic-box">
         <div className="statistic">{props.statistic1}</div>
-        <div className="statisticText">Posts</div>
+        <div className="statistic-text">Posts</div>
       </div>
-      <div className="statisticBox">
+      <div className="statistic-box">
         <div className="statistic">{props.statistic2}</div>
-        <div className="statisticText">Places visited</div>
+        <div className="statistic-text">Places visited</div>
       </div>
-      <div className="statisticBox">
+      <div className="statistic-box">
         <div className="statistic">{props.statistic3}</div>
-        <div className="statisticText">Followers</div>
+        <div className="statistic-text">Followers</div>
       </div>
-      <div className="statisticBox">
+      <div className="statistic-box">
         <div className="statistic">{props.statistic4}</div>
-        <div className="statisticText">Following</div>
+        <div className="statistic-text">Following</div>
       </div>
     </div>
   );
