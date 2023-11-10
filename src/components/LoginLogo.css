@@ -1,0 +1,11 @@
+/* LoginLogo.css */
+.login-logo {
+    margin-top: 25px;
+    grid-area: login-logo;
+    padding: 10px;
+    border-radius: 10px;
+    background-size: contain;
+    position: relative;
+    z-index: 2; /* Bring the logo to the front */
+  }
+  

@@ -1,0 +1,10 @@
+/* WorldLogo.css */
+.world-logo img {
+    grid-area: world-logo;
+    position: relative;
+    background-size: contain;
+    margin-bottom: 10px;
+    margin-top: 50px;
+    z-index: 2; /* Bring the logo to the front */
+  }
+  
