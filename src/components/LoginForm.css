@@ -28,4 +28,10 @@
     border-radius: 10px;
     cursor: pointer;
   }
-  
+
+  .error-message {
+    color: red;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+  }

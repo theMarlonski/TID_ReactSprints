@@ -22,7 +22,7 @@ function App() {
     <div className="App">
     <BrowserRouter>
       <Routes>
-          <Route path="/" element={<Homepage />} />
+          <Route path="/home" element={<Homepage />} />
           <Route path="/profile" element={<Profilescreen />} />
           <Route path="/post" element={<HellesPost />} />
           <Route path="/login" element={<LoginScreen />} />
