@@ -1,6 +1,6 @@
 import './App.css';
 import {Routes, Route} from 'react-router-dom'
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Navigate} from 'react-router-dom';
 import Profilescreen from './pages/profilescreen.js'
 import Homepage from './pages/Homepage.js'
 import HellesPost from './pages/HellesPost.js'
@@ -26,6 +26,7 @@ function App() {
           <Route path="/profile" element={<Profilescreen />} />
           <Route path="/post" element={<HellesPost />} />
           <Route path="/login" element={<LoginScreen />} />
+          <Route index element={<Navigate to="/login" />} />
       </Routes>
     </BrowserRouter>
     </div>
