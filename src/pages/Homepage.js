@@ -13,29 +13,28 @@ import './Homepage.css';
 
 function HomePage() {
   return (
-    <div className="App">
+    <div>
       <Header
         IconPath={Icon}
       />
       <div className="post-section">
         <HomePost
           profileImage={ProfileImage1}
-          name="Lisa🇳🇴"
+          name="Lisa 🇳🇴"
           postImage={PostImage1}
           flag="🇳🇴"
           tags={["Norway", "Travel", "Nature", "Mountains", "Fjords"]}
           />
-          
         <HomePost
           profileImage={ProfileImage2}
-          name="Oguz🇹🇷"
+          name="Oguz 🇹🇷"
           postImage={PostImage2}
           flag="🇹🇷"
           tags={["Istanbul", "Travel", "City", "Culture", "History"]}
           />
         <HomePost
           profileImage={ProfileImage3}
-          name="Louis🇬🇧"
+          name="Louis 🇬🇧"
           postImage={PostImage3}
           flag="🇮🇹"
           tags={["Milano", "Travel", "City", "Culture", "History"]}
