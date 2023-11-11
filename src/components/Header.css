@@ -1,0 +1,37 @@
+/* Header.css */
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: #fff; /* White background */
+    border-bottom: 1px solid #ccc; /* Bottom border with light gray color */
+    position: fixed; /* Fixed position at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it's on top of other elements */
+    border-bottom-left-radius: 10px; /* Rounded border bottom left */
+    border-bottom-right-radius: 10px; /* Rounded border bottom right */
+    margin-bottom: 50px;
+}
+
+.header-logo {
+    display: flex;
+}
+
+.header-logo img {
+    width: 100px; /* Adjust logo width */
+}
+
+.header-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin-right: 10px; /* Adjust as needed to push the icon to the right */
+}
+
+.header-icon img {
+    width: 30px; /* Adjust notification icon width */
+}

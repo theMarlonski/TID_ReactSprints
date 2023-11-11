@@ -1,0 +1,9 @@
+/* LibraryView.css */
+.view {
+    display: flex;
+    align-items: center; 
+  }
+  
+  .view img {
+    margin: 10px;
+  }
