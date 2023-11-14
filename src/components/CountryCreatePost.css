@@ -1,0 +1,39 @@
+/* SearchContainer.css */
+
+/* Style for the search container */
+.search-container {
+    width: 100%;
+  }
+  
+  /* Style for the input field */
+  .search-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1.5px solid #424B5A;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    color :#858E96;
+  }
+  
+  /* Style for the list */
+  .country-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 15px;
+  }
+  
+  /* Style for each list item */
+  .list-country {
+    padding: 4px;
+    margin-bottom: 3px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    color :#858E96;
+  }
+  
