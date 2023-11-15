@@ -1,7 +1,13 @@
+body{
+  margin-bottom: 55px;
+
+}
+
 .title-text p{
     font-size: 12px;
     font-weight: 400;
     line-height: 14px;
     color :#858E96;
     margin-left: 10px;
+    padding-top: 10px;
   }
