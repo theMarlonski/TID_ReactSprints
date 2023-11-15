@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './CreatePost.css';
 import TopBarCreatePost from '../components/TopBarCreatePost.js';
 import AddPicture from '../components/AddPicture.js';
@@ -9,8 +9,7 @@ import CreateTags from '../components/CreateTags.js';
 import Footer from '../components/Footer.js';
 
 function CreatePost() {
-
-  const categories = [
+  const predefinedTags = [
     'Adventure Travel',
     'Cultural Exploration',
     'Travel Tips',
@@ -28,6 +27,12 @@ function CreatePost() {
     'Off the Beaten Path',
   ];
 
+  const [specialTag, setSpecialTag] = useState([]);
+
+  const handleSpecialTagChange = (value) => {
+    setSpecialTag(value);
+  };
+
   return (
     <div className='App'>
       <TopBarCreatePost />
@@ -39,7 +44,7 @@ function CreatePost() {
       <div className='title-text'>
         <p>Add location</p>
       </div>
-      <CountryCreatePost />
+      <CountryCreatePost specialTag={specialTag} handleSpecialTagChange={handleSpecialTagChange} />
       <div className='title-text'>
         <p>Add description</p>
       </div>
@@ -47,7 +52,7 @@ function CreatePost() {
       <div className='title-text'>
         <p>Add tags</p>
       </div>
-      <CreateTags tags={categories}/>
+      <CreateTags tags={specialTag} predefinedTags={predefinedTags} onSpecialTagChange={handleSpecialTagChange}/>
       <Footer />
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './CountryCreatePost.css'; // Import your CSS file
 
-const CountryCreatePost = () => {
+const CountryCreatePost = ({ specialTag, handleSpecialTagChange }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isListVisible, setListVisible] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState('');
@@ -225,12 +225,19 @@ const CountryCreatePost = () => {
     setListVisible(term.length > 0); // Show the list if the search term is not empty
   };
 
-  const handleCountryClick = (countries) => {
+  const handleCountryClick = (country) => {
+    // Add the selected country to the predefined tags
+    const updatedTags = [...specialTag, country];
+
     // Set the selected country in the search field
-    setSearchTerm(countries);
-    setSelectedCountry(countries);
+    setSearchTerm(country);
+    setSelectedCountry(country);
+
     // Hide the list
     setListVisible(false);
+
+    // Update the parent component's state with the new tags
+    handleSpecialTagChange(updatedTags);
   };
 
   const filteredCountries = countries.filter(countries =>

@@ -9,7 +9,7 @@ function DescriptionInput() {
         name="description"
         rows="4"
         cols="50"
-        placeholder="Write something about your expirience..."
+        placeholder="Write something about your experience..."
       ></textarea>
     </div>
   );
