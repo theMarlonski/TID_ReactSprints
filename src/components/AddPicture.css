@@ -1,11 +1,32 @@
+.empty-image {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
+}
 
 .empty-image img {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-top: 10px;
-    border-radius: 10px;
-  }
+  width: 100%;
+  border-radius: 10px;
+}
+
+.remove-button {
+  align-self: flex-end; /* Align the button to the right */
+  margin-top: -5px; /* Adjust as needed for spacing */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: red; /* Set the color to red */
+  font-size: 20px;
+}
+
+.remove-button:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
 

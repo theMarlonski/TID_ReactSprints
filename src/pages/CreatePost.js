@@ -32,6 +32,17 @@ function CreatePost() {
   const handleSpecialTagChange = (value) => {
     setSpecialTag(value);
   };
+  
+  const [mainImageSelected, setMainImageSelected] = useState(false);
+  const [additionalImages, setAdditionalImages] = useState(Array.from({ length: 9 }, () => null)); // Array to store additional images
+
+  const handleMainImageChange = (imageData) => {
+    setMainImageSelected(true);
+  };
+
+  const handleAdditionalImagesChange = (imagesData) => {
+    setAdditionalImages(imagesData);
+  };
 
   return (
     <div className='App'>
@@ -39,8 +50,8 @@ function CreatePost() {
       <div className='title-text'>
         <p>Tap to add picture</p>
       </div>
-      <AddPicture />
-      <AddMorePics />
+      <AddPicture onImageChange={handleMainImageChange} />
+      <AddMorePics onImagesChange={handleAdditionalImagesChange} mainImageSelected={mainImageSelected} />
       <div className='title-text'>
         <p>Add location</p>
       </div>
