@@ -3,6 +3,7 @@ import './CreateTags.css';
 
 function CreateTags(props) {
   const [inputValue, setInputValue] = useState('');
+  const [selectedPredefinedTags, setSelectedPredefinedTags] = useState([]);
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -17,17 +18,37 @@ function CreateTags(props) {
     }
   };
 
+  const handleTagClick = (index) => {
+    // Check if the tag is already selected
+    if (selectedPredefinedTags.includes(index)) {
+      // If selected, remove it from the selection
+      setSelectedPredefinedTags((prevSelected) =>
+        prevSelected.filter((selectedTag) => selectedTag !== index)
+      );
+    } else {
+      // If not selected, add it to the selection
+      setSelectedPredefinedTags((prevSelected) => [...prevSelected, index]);
+    }
+  };
+
   return (
     <ul className="create-tags">
       {props.predefinedTags.map((tag, index) => (
-        <li className="tag" key={index}>
+        <li
+          className={`tag ${selectedPredefinedTags.includes(index) ? 'selected' : ''}`}
+          key={index}
+          onClick={() => handleTagClick(index)}
+        >
           {tag}
         </li>
       ))}
       {props.tags.map((tag, index) => (
         <li className="tag user-defined" key={index}>
           {tag}
-          <span className="delete-tag" onClick={() => props.onSpecialTagChange(props.tags.filter((_, i) => i !== index))}>
+          <span
+            className="delete-tag"
+            onClick={() => props.onSpecialTagChange(props.tags.filter((_, i) => i !== index))}
+          >
             &times;
           </span>
         </li>
