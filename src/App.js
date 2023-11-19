@@ -5,6 +5,7 @@ import Profilescreen from './pages/profilescreen.js'
 import Homepage from './pages/Homepage.js'
 import HellesPost from './pages/HellesPost.js'
 import LoginScreen from './pages/LoginScreen.js';
+import CreatePost from './pages/CreatePost.js';
 
 // Import Parse minified version
 import Parse from 'parse';
@@ -26,6 +27,7 @@ function App() {
           <Route path="/profile" element={<Profilescreen />} />
           <Route path="/post" element={<HellesPost />} />
           <Route path="/login" element={<LoginScreen />} />
+          <Route path="/create-post" element={<CreatePost />} />
           <Route index element={<Navigate to="/login" />} />
       </Routes>
     </BrowserRouter>

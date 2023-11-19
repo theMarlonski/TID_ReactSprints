@@ -24,6 +24,7 @@ function LoginForm() {
     Parse.User.logIn(email, password)
       .then((user) => {
         console.log(`Logged in as ${user.get('username')}`);
+        const activeUser = user.get('objectId');
         navigate('/home/'); // Navigate to the profile page
       })
       .catch((error) => {
