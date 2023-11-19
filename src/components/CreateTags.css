@@ -1,40 +1,45 @@
 .create-tags {
   display: flex;
-  flex-wrap: wrap; /* Prevent wrapping of tags */
+  flex-wrap: wrap;
   line-height: 16px;
   margin-bottom: 10px;
   padding-left: 0;
+  max-height: max-content;
 }
 
 .create-tags .tag {
-  padding: 5px 10px; /* Adjust padding */
-  border-radius: 20px; /* Rounded corners for tags */
-  margin: 0 5px 5px 0; /* Adjust margins */
-  font-size: 14px; /* Adjust font size */
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin: 0 5px 5px 0;
+  font-size: 14px;
   line-height: 16px;
-  color: #424B5A; /* Black text color */
-  display: flex; /* Align text and dot */
+  color: #424B5A;
+  display: flex;
   align-items: center;
-  background-color: rgb(203, 237, 229); /* Tag color in rgb */
-  white-space: nowrap; /* Prevent tag text from wrapping */
+  background-color: rgb(203, 237, 229);
+  white-space: nowrap;
+  height: 17px; /* Set a fixed height for tags */
 }
 
 .create-tags .tag.special-tag {
-  background-color: rgb(203, 237, 229); /* Lighter color for the special tag */
-  color: rgb(66, 75, 90, 0.75); /* Darker text color for contrast */
+  background-color: rgb(203, 237, 229);
+  color: rgb(66, 75, 90, 0.75);
 }
 
 .create-tags .tag.special-tag input {
-  background-color: transparent; /* Make the input field background transparent */
-  border: none; /* Remove the border */
-  outline: none; /* Remove the input focus outline */
-  color: rgb(66, 75, 90); /* Text color */
-  width: 100%; /* Ensure the input takes up the full width */
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: rgb(66, 75, 90);
+  font-size: 14px;
+  line-height: 16px;
+  width: 100%;
 }
 
 .create-tags .tag.user-defined {
   position: relative;
-  background-color: rgb(254, 218, 144)
+  background-color: rgb(254, 218, 144);
+  height: 17px; /* Set the same fixed height as predefined tags */
 }
 
 .create-tags .tag.user-defined .delete-tag {
@@ -46,21 +51,21 @@
   font-weight: bold;
 }
 
-.create-tags .tag::before {
-  content: '•'; /* Unicode for bullet (•) */
-  margin-right: 5px; /* Adjust margin */
-  font-size: 45px; /* Adjust bullet size */
+.create-tags .tag::before,
+.create-tags .tag.special-tag::before {
+  content: '•';
+  margin-right: 5px;
+  font-size: 16px; /* Adjust bullet size */
   color: rgb(66, 75, 90);
 }
 
 .create-tags .tag.special-tag::before {
-  content: '+'; /* Unicode for bullet (+) */
-  margin-right: 5px; /* Adjust margin */
-  font-size: 20px; /* Adjust bullet size */
+  content: '+';
+  font-size: 14px; /* Adjust bullet size */
   color: rgb(66, 75, 90, 75);
-  padding-bottom: 5px;
+  padding-bottom: 2px;
 }
 
 .create-tags .tag.selected {
-  background-color: rgb(254, 218, 144)/* Your selected tag color */;
+  background-color: rgb(254, 218, 144);
 }
