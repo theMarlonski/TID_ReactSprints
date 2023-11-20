@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './CreateTags.css';
 
 function CreateTags(props) {
   const [inputValue, setInputValue] = useState('');
-  const [selectedPredefinedTags, setSelectedPredefinedTags] = useState([]);
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -20,22 +19,14 @@ function CreateTags(props) {
 
   const handleTagClick = (index) => {
     // Check if the tag is already selected
-    if (selectedPredefinedTags.includes(index)) {
-      // If selected, remove it from the selection
-      setSelectedPredefinedTags((prevSelected) =>
-        prevSelected.filter((selectedTag) => selectedTag !== index)
-      );
-    } else {
-      // If not selected, add it to the selection
-      setSelectedPredefinedTags((prevSelected) => [...prevSelected, index]);
-    }
+    props.onPredefinedTagClick(index);
   };
 
   return (
     <ul className="create-tags">
       {props.predefinedTags.map((tag, index) => (
         <li
-          className={`tag ${selectedPredefinedTags.includes(index) ? 'selected' : ''}`}
+          className={`tag ${props.selectedPredefinedTags.includes(index) ? 'selected' : ''}`}
           key={index}
           onClick={() => handleTagClick(index)}
         >

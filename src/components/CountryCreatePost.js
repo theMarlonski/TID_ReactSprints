@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './CountryCreatePost.css'; // Import your CSS file
 
-const CountryCreatePost = ({ specialTag, handleSpecialTagChange }) => {
+const CountryCreatePost = ({ specialTag, handleSpecialTagChange, onCountryChange }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isListVisible, setListVisible] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState('');
@@ -238,6 +238,7 @@ const CountryCreatePost = ({ specialTag, handleSpecialTagChange }) => {
 
     // Update the parent component's state with the new tags
     handleSpecialTagChange(updatedTags);
+    onCountryChange(country);
   };
 
   const filteredCountries = countries.filter(countries =>
