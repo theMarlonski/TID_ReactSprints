@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Parse from 'parse';
+import { useNavigate } from 'react-router-dom';
 import './CreatePost.css';
 import TopBarCreatePost from '../components/TopBarCreatePost.js';
 import AddPicture from '../components/AddPicture.js';
@@ -21,6 +22,8 @@ Parse.serverURL = PARSE_HOST_URL;
 console.log('Current user authenticated:', Parse.User.currentAsync());
 
 function CreatePost() {
+  const navigate = useNavigate();
+
   const predefinedTags = [
     'Adventure Travel',
     'Cultural Exploration',
@@ -82,6 +85,9 @@ function CreatePost() {
     setDescription(value);
   };
 
+  const [loading, setLoading] = useState(false);
+
+
   const handleSavePost = async () => {
     console.log('Share button clicked');
   
@@ -90,6 +96,8 @@ function CreatePost() {
       console.error('Incomplete data. Please fill in all required fields.');
       return;
     }
+
+    setLoading(true); // Set loading state to true
   
     // Create a new Parse Object for the 'Post' class
     const Post = new Parse.Object('Post');
@@ -136,13 +144,17 @@ function CreatePost() {
       await Post.save();
   
       console.log('Post saved successfully!');
+      navigate('/home');
     } catch (error) {
       console.error('Error saving post:', error);
+    } finally {
+      setLoading(false); // Set loading state back to false
     }
   };
 
   return (
     <div className='App'>
+      {loading && <div className="loading-indicator">Saving...</div>}
       <TopBarCreatePost onShareClick={handleSavePost}/>
       <div className='title-text'>
         <p>Tap to add picture</p>
