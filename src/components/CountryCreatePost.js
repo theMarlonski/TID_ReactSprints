@@ -1,11 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './CountryCreatePost.css'; // Import your CSS file
 
-const CountryCreatePost = ({ specialTag, handleSpecialTagChange, onCountryChange }) => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [isListVisible, setListVisible] = useState(false);
-  const [selectedCountry, setSelectedCountry] = useState('');
-  const countries = ['🇦🇫 Afghanistan',
+const countries = ['🇦🇫 Afghanistan',
   '🇦🇱 Albania',
   '🇩🇿 Algeria',
   '🇦🇩 Andorra',
@@ -202,6 +198,11 @@ const CountryCreatePost = ({ specialTag, handleSpecialTagChange, onCountryChange
   '🇿🇼 Zimbabwe'
 ];
 
+const CountryCreatePost = ({ specialTag, handleSpecialTagChange, onCountryChange }) => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [isListVisible, setListVisible] = useState(false);
+  const [selectedCountry, setSelectedCountry] = useState('');
+  
   const inputRef = useRef(null);
 
   useEffect(() => {

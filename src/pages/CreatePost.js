@@ -78,6 +78,11 @@ function CreatePost() {
   };
 
   const handleCountryChange = (value) => {
+    setSpecialTag((prevSpecialTags) => {
+      // Filter out the old country and add the new one
+      const updatedSpecialTags = prevSpecialTags.filter((tag) => tag !== country);
+      return [...updatedSpecialTags];
+    });
     setCountry(value);
   };
 
