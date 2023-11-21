@@ -1,59 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import Parse from 'parse';
+import React from 'react';
+import './HellesPost.css';
 import TopBarPost from '../components/TopBarPost.js';
+import Flag from '../Ressources/Icons/norwegian-flag.png';
 import Footer from '../components/Footer';
 import PostDetail from '../components/PostDetail.js';
+import DetailPost from "../Ressources/DetailedPosts/Aurlandsdalen.jpg";
 import FollowNameContainer from '../components/FollowNameContainer';
+import Helle from "../Ressources/ProfilePictures/HellePicture.png";
 import DetailedPostDescription from '../components/DetailedPostDescription';
 import Tags from '../components/Tags';
-
-function HellesPost({ params }) {
-  const [post, setPost] = useState(null);
-
-  useEffect(() => {
-    if (params && params.postId) {
-      console.log('Fetching data for postId:', params.postId);
-      fetchPostData(params.postId);
-    }
-  }, [params]);
-
-  const fetchPostData = async (postId) => {
-    try {
-      console.log('Fetching post data...');
-      const Post = Parse.Object.extend('Post');
-      const postQuery = new Parse.Query(Post);
-      postQuery.equalTo('objectId', postId);
-      const postResult = await postQuery.get(postId);
-  
-      console.log('Fetched post data:', postResult);
-  
-      setPost(postResult);
-    } catch (error) {
-      console.error('Error fetching post data:', error);
-    }
-  };
-
-  if (!post) {
-    // You can add a loading state or redirect to an error page
-    return <p>Loading...</p>;
-  }
-
-
+function HellesPost() {
   return (
     <div className="App">
-      <PostDetail DetailedPost={post.get('mainImage').url()} />
-      <TopBarPost PostCountryFlag={post.get('country').substring(0, 4)} PostCountry={post.get('country').substring(4)} />
+      <PostDetail
+      DetailedPost={DetailPost}
+      />
+      <TopBarPost
+      PostCountryFlag={Flag}
+      PostCountry='Norway'
+      />
+      
       <FollowNameContainer
-        ProfilePost={post.get('user').get('profilePicture').url()}
-        ProfileName={`${post.get('user').get('username')} ${post.get('user').get('localCountry')}`}
+      ProfilePost={Helle}
+      ProfileName='Helle 🇳🇴'
       />
+      
       <DetailedPostDescription
-        PostDescription_1={post.get('description')}
+      PostDescription_1='Aurlandsdalen is a 40 km long valley in Norway and it is characterized by lush, species-rich nature. It contains rich cultural monuments in the form of old farms and stables.'
+      PostDescription_2='Aurlandsdalen is known for its stunning natural beauty and historical significance.'
       />
-      <Tags tags={post.get('tags')} />
+      
+      <Tags tags={["Aurlandsdalen", "Norway", "Hiking", "Wild", "Spectacular Nature", "Outdoor"]}/>
       <Footer />
     </div>
   );
 }
-
 export default HellesPost;

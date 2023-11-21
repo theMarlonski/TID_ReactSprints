@@ -10,7 +10,6 @@ function HomePage() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    // Fetch data from Parse here
     fetchData();
   }, []);
 
@@ -41,16 +40,6 @@ function HomePage() {
       const postsResult = await postQuery.find();
       setPosts(postsResult);
 
-      console.log(postsResult);
-
-      // Log properties for each post during the query
-      postsResult.forEach((post) => {
-        const user = post.get('user');
-        console.log('User Object for Post:', user);
-        console.log('Profile Image for Post:', post.get('user').get('profilePicture'));
-        console.log('Post Image for Post:', post.get('mainImage'));
-    });
-
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -63,11 +52,9 @@ function HomePage() {
       />
       <div className="post-section">
         {posts.map((post) => {
-          const postIds = post.id; // Retrieve the user object
-          console.log('Post id:', postIds);
-
           return (
             <HomePost
+              key={post.id}
               postId={post.id}
               profileImage={post.get('user').get('profilePicture')?.url()} 
               name={`${post?.get('user').get('username')} ${post.get('user').get('localCountry')}`} 
