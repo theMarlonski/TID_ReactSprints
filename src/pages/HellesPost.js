@@ -9,7 +9,6 @@ import FollowNameContainer from '../components/FollowNameContainer';
 import Helle from "../Ressources/ProfilePictures/HellePicture.png";
 import DetailedPostDescription from '../components/DetailedPostDescription';
 import Tags from '../components/Tags';
-
 function HellesPost() {
   return (
     <div className="App">
@@ -32,9 +31,8 @@ function HellesPost() {
       />
       
       <Tags tags={["Aurlandsdalen", "Norway", "Hiking", "Wild", "Spectacular Nature", "Outdoor"]}/>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
-
 export default HellesPost;
