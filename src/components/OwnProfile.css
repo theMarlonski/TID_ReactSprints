@@ -1,0 +1,45 @@
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+
+  }
+
+  .profile-container .profile-image {
+    width: 100px; /* Adjust the width of the profile image as needed */
+    height: 100px; /* Adjust the height of the profile image as needed */
+    border-radius: 50%;
+    margin-right: 20px; /* Add margin between the image and the name */
+  }
+
+  .profile-container .name {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .profile-container .location {
+    font-size: 14px;
+    margin-right: 10px;
+    margin-left: 0px;
+    margin-top: 5px;
+  }
+
+  .map-icon {
+    /* Add styles for the map icon here */
+    width: 24px; /* Adjust the width as needed */
+    height: 24px; /* Adjust the height as needed */
+    margin-left: 10px;
+    /* Add any other styles you want for the map icon */
+  }
+
+  .name-and-location {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .map-and-location {
+    display: flex;
+  }
