@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './LoginForm.css';
 import Parse from 'parse';
 import { useNavigate } from 'react-router-dom';
@@ -7,8 +7,14 @@ function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null); // Initialize error state
-
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const currentUser = Parse.User.current();
+    if (currentUser) {
+      navigate('/home');
+    }
+  }, [navigate]);
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);

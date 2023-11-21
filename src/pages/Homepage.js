@@ -3,6 +3,7 @@ import Parse from 'parse';
 import Header from '../components/Header.js';
 import HomePost from '../components/HomePost.js';
 import Footer from '../components/Footer.js';
+import NotificationIcon from '../Ressources/Icons/NotificationBell.svg';
 import './Homepage.css';
 
 function HomePage() {
@@ -57,7 +58,9 @@ function HomePage() {
 
   return (
     <div>
-      <Header />
+      <Header
+      iconPath = {NotificationIcon}
+      />
       <div className="post-section">
         {posts.map((post) => {
           const postIds = post.id; // Retrieve the user object

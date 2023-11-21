@@ -1,13 +1,10 @@
-import './App.css';
-import {Routes, Route} from 'react-router-dom'
-import { BrowserRouter, Navigate} from 'react-router-dom';
-import Profilescreen from './pages/profilescreen.js'
-import Homepage from './pages/Homepage.js'
-import HellesPost from './pages/HellesPost.js'
+import React, { useEffect, useState } from 'react';
+import { Routes, Route, Navigate, BrowserRouter } from 'react-router-dom';
+import Profilescreen from './pages/profilescreen.js';
+import Homepage from './pages/Homepage.js';
+import HellesPost from './pages/HellesPost.js';
 import LoginScreen from './pages/LoginScreen.js';
 import CreatePost from './pages/CreatePost.js';
-
-// Import Parse minified version
 import Parse from 'parse';
 
 // Your Parse initialization configuration goes here
@@ -17,21 +14,46 @@ const PARSE_HOST_URL = 'https://parseapi.back4app.com/';
 Parse.initialize(PARSE_APPLICATION_ID, PARSE_JAVASCRIPT_KEY);
 Parse.serverURL = PARSE_HOST_URL;
 
+const isUserLoggedIn = () => {
+  return Parse.User.current() !== null;
+};
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(true);
+
+  useEffect(() => {
+    setLoggedIn(isUserLoggedIn());
+  }, []);
+
   return (
     <div className="App">
-    <BrowserRouter>
-      <Routes>
-          <Route path="/home" element={<Homepage />} />
-          <Route path="/profile" element={<Profilescreen />} />
-          <Route path="/post/:postId" element={<HellesPost />} />
-          <Route path="/login" element={<LoginScreen />} />
-          <Route path="/create-post" element={<CreatePost />} />
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/home"
+            element={loggedIn ? <Homepage /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/profile"
+            element={loggedIn ? <Profilescreen /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/post/:postId"
+            element={loggedIn ? <HellesPost /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/login"
+            element={<LoginScreen />}
+          />
+          <Route
+            path="/create-post"
+            element={loggedIn ? <CreatePost /> : <Navigate to="/login" />}
+          />
           <Route index element={<Navigate to="/login" />} />
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
+
 export default App;
