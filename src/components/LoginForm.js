@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './LoginForm.css';
 import Parse from 'parse';
-import { useHistory, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function LoginForm() {
   const [email, setEmail] = useState('');
@@ -34,10 +34,17 @@ function LoginForm() {
       });
   };
 
+  const handleKeyPress = (event) => {
+    // Check if the pressed key is "Enter"
+    if (event.key === 'Enter') {
+      handleLogin(); // Invoke the login function
+    }
+  };
+
   return (
     <div className="login-form">
-      <input type="text" placeholder="E-Mail" value={email} onChange={handleEmailChange} />
-      <input type="password" placeholder="Password" value={password} onChange={handlePasswordChange} />
+      <input type="text" placeholder="E-Mail or Username" value={email} onChange={handleEmailChange} />
+      <input type="password" placeholder="Password" value={password} onChange={handlePasswordChange} onKeyDown={handleKeyPress} />
       <div className="login-button">
         <button onClick={handleLogin}>LOGIN</button>
       </div>

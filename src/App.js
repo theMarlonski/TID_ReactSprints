@@ -25,7 +25,7 @@ function App() {
       <Routes>
           <Route path="/home" element={<Homepage />} />
           <Route path="/profile" element={<Profilescreen />} />
-          <Route path="/post" element={<HellesPost />} />
+          <Route path="/post/:postId" element={<HellesPost />} />
           <Route path="/login" element={<LoginScreen />} />
           <Route path="/create-post" element={<CreatePost />} />
           <Route index element={<Navigate to="/login" />} />
