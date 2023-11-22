@@ -18,32 +18,39 @@ function HellesPost() {
   // Use state to store the description
   const [description, setDescription] = useState('');
   const [country, setCountry] = useState('');
+  const [additionalImageUrls, setAdditionalImageUrls] = useState([]);
 
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
-    const postId = location.state?.postId; // Get postId from location.state
+    const postId = location.state?.postId;
     const Post = Parse.Object.extend('Post');
     const query = new Parse.Query(Post);
-
+  
     try {
       const postObject = await query.get(postId);
-      console.log('Response from Parse:', postObject);
-
-      // Access the column in your Post table for description
       const descriptionValue = postObject.get('description');
       const countryValue = postObject.get('country');
-
-      // Set the description in state
+  
+      // Dynamically retrieve additional images
+      const additionalImageUrlsValue = [];
+      let index = 0;
+      while (true) {
+        const additionalImage = postObject.get(`AdditionalImage${index}`);
+        if (!additionalImage) break; // Exit loop if no more additional images
+        additionalImageUrlsValue.push(additionalImage);
+        index++;
+      }
+  
       setDescription(descriptionValue || '');
       setCountry(countryValue || '');
-
+      setAdditionalImageUrls(additionalImageUrlsValue);
+  
       console.log('Description:', descriptionValue);
       console.log('Country:', countryValue);
-
-      // Handle the descriptions as needed in your component
+      console.log('AdditionalImageUrls:', additionalImageUrlsValue);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -51,7 +58,7 @@ function HellesPost() {
 
   return (
     <div className="helles-body">
-      <PostDetail DetailedPost={detailedPostImage || ''} />
+      <PostDetail DetailedPost={detailedPostImage || ''} additionalImages={additionalImageUrls} />
       <TopBarPost PostCountry={country} />
       <FollowNameContainer ProfilePost={profilepic} ProfileName={name} />
       <DetailedPostDescription PostDescription={description} />

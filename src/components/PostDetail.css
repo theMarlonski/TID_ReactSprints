@@ -1,15 +1,34 @@
-.image-section {
-    width: 100vw;
-    height: 66vh;
-    border: 0;
-    position: relative;
-    margin-top: 0;
-  }
-  
-  .image-section img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-  }
+.image-section-multiple {
+  width: 100vw;
+  height: 66vh;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent images from wrapping to the next line */
+  position: relative;
+}
+
+.image-scroll-container {
+  display: flex; /* Make the container a flex container */
+}
+
+.image-scroll-container img {
+  width: 100%;
+  height: 66vh;
+  object-fit: cover;
+  top: 0;
+}
+
+.image-section-single {
+  width: 100vw;
+  height: 66vh;
+  border: 0;
+  position: relative;
+  margin-top: 0;
+}
+
+.image-section-single img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+}

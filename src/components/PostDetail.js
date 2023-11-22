@@ -3,21 +3,38 @@ import './PostDetail.css';
 import SlideBar from './SlideBar.js';
 
 function PostDetail(props) {
-  // Log the image URL to check if it's correct
-  console.log('Image URL:', props.DetailedPost);
+  // Log the image URLs to check if they're correct
+  console.log('Image URLs:', props.additionalImages);
 
-  // Check if DetailedPost is a string (URL)
-  if (typeof props.DetailedPost === 'string') {
+  // Render the main image
+  const mainImage = typeof props.DetailedPost === 'string' ? (
+    <img src={props.DetailedPost} alt="PostDetail" onError={() => console.error('Error loading main image')} />
+  ) : (
+    <img src={props.DetailedPost.url()} alt="PostDetail" onError={() => console.error('Error loading main image')} />
+  );
+
+  // Check if additionalImages is an array of strings (URLs)
+  if (Array.isArray(props.additionalImages) && props.additionalImages.length > 0) {
     return (
-      <div className="image-section">
-        <img src={props.DetailedPost} alt="PostDetail" onError={() => console.error('Error loading image')} />
-        <SlideBar /> {/* Ensure that the SlideBar component is correctly placed here */}
+      <div className="image-section-multiple">
+        <div className="image-scroll-container">
+          {mainImage}
+          {/* Render additional images dynamically */}
+          {props.additionalImages.map((additionalImage, index) => (
+            <img key={index} src={additionalImage.url()} alt={`AdditionalImage${index}`} onError={() => console.error(`Error loading AdditionalImage${index}`)} />
+          ))}
+        </div>
+        <SlideBar />
       </div>
     );
   } else {
-    // Log an error if DetailedPost is not a string
-    console.error('Invalid image URL:', props.DetailedPost);
-    return null; // You can return some fallback content or an empty div here
+    // Render only the main image if there are no additional images
+    return (
+      <div className="image-section-single">
+        {mainImage}
+        <SlideBar />
+      </div>
+    );
   }
 }
 
