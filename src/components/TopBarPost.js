@@ -16,7 +16,6 @@ function TopBarPost(props) {
         <div className="icon"><img src={Back} alt="ArrowBack" /></div>
       </div>
       <div className="box">
-        <img src={props.PostCountryFlag} alt="Post Flag" />
         <p>{props.PostCountry}</p>
       </div>
     </div>

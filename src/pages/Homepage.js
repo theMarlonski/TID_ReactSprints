@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
 import Parse from 'parse';
 import Header from '../components/Header.js';
 import HomePost from '../components/HomePost.js';
@@ -51,7 +50,6 @@ function HomePage() {
       <Header iconPath={NotificationIcon} />
       <div className="post-section">
       {posts.map((post) => (
-        <Link key={post.id} to={`/post/${post.id}`} state={{ detailedPostImage: post.get('mainImage').url() }}>
           <HomePost
             postId={post.id}
             profileImage={post.get('user').get('profilePicture')?.url()} 
@@ -60,7 +58,6 @@ function HomePage() {
             flag={post.get('country')?.split(' ')[0]}
             tags={post.get('tags')}
           />
-        </Link>
       ))}
       </div>
       <Footer />
