@@ -158,7 +158,7 @@ function CreatePost() {
   };
 
   return (
-    <div className='App'>
+    <div className='create-body'>
       {loading && <div className="loading-indicator">Saving...</div>}
       <TopBarCreatePost onShareClick={handleSavePost}/>
       <div className='title-text'>

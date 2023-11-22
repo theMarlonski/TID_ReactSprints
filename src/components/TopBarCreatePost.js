@@ -11,7 +11,7 @@ function TopBarCreatePost({ onShareClick }) {
   };
 
   return (
-    <div className="top-bar">
+    <div className="top-bar-create">
       <div className="icon-container" onClick={handleBack}>
         <div className="icon">
           <img src={Back} alt="ArrowBack" />
