@@ -47,23 +47,18 @@ function HomePage() {
 
   return (
     <div>
-      <Header
-      iconPath = {NotificationIcon}
-      />
+      <Header iconPath={NotificationIcon} />
       <div className="post-section">
-        {posts.map((post) => {
-          return (
-            <HomePost
-              key={post.id}
-              postId={post.id}
-              profileImage={post.get('user').get('profilePicture')?.url()} 
-              name={`${post?.get('user').get('username')} ${post.get('user').get('localCountry')}`} 
-              postImage={post.get('mainImage').url()} 
-              flag={post.get('country')?.split(' ')[0]}
-              tags={post.get('tags')}
-            />
-          );
-        })}
+      {posts.map((post) => (
+          <HomePost
+            postId={post.id}
+            profileImage={post.get('user').get('profilePicture')?.url()} 
+            name={`${post?.get('user').get('username')} ${post.get('user').get('localCountry')}`} 
+            postImage={post.get('mainImage').url()} 
+            flag={post.get('country')?.split(' ')[0]}
+            tags={post.get('tags')}
+          />
+      ))}
       </div>
       <Footer />
     </div>
