@@ -50,7 +50,7 @@ function HellesPost() {
   };
 
   return (
-    <div className="App">
+    <div className="helles-body">
       <PostDetail DetailedPost={detailedPostImage || ''} />
       <TopBarPost PostCountry={country} />
       <FollowNameContainer ProfilePost={profilepic} ProfileName={name} />
