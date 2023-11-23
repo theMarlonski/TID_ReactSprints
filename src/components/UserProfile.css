@@ -25,21 +25,6 @@
     margin-left: -5px;
   }
 
-  .button-style {
-    padding: 5px 10px; /* Adjust padding */
-    border-radius: 20px; /* Rounded corners for tags */
-    margin: 0px 5px 0px 0; /* Adjust margins */
-    font-size: 14px; /* Adjust font size */
-    line-height: 16px;
-    color: #424B5A; 
-    display: flex; /* Align text and dot */
-    align-items: center;
-    background-color: rgb(173, 216, 206); /* Button color in rgb */
-    border-style: none;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 600;
-  }
-
   .location-and-follow {
     display: flex;
     justify-content: center;

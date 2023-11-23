@@ -4,8 +4,8 @@ import './UserInfobox.css'
 
 function UserProfile(props) {
   return (
-    <div class="container-user">
-      <div class="user">
+    <div className="container-user">
+      <div className="user">
         <img src={props.profileImage} alt="Profile Image" />
           <div className="name">{props.name}
         </div>
