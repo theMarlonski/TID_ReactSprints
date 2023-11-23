@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route, BrowserRouter, Navigate} from 'react-router-dom';
 import Profilescreen from './pages/profilescreen.js';
+import OwnProfile from './pages/UsersownProfile.js';
 import Homepage from './pages/Homepage.js';
 import HellesPost from './pages/HellesPost.js';
 import LoginScreen from './pages/LoginScreen.js';
@@ -23,6 +24,7 @@ function App() {
           <Route path="/post/:postId" element={<HellesPost />} />
           <Route path="/login" element={<LoginScreen />} />
           <Route path="/create-post" element={<CreatePost />} />
+          <Route path="/own-profile" element={<OwnProfile />} />
           <Route index element={<Navigate to="/login" />} />
         </Routes>
       </BrowserRouter>
