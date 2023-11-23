@@ -9,6 +9,7 @@ import LibraryView from '../components/LibraryView.js';
 import view1 from '../Ressources/Icons/View_Grid.png';
 import view2 from '../Ressources/Icons/View_List.png';
 import mapIcon from '../Ressources/Icons/Location.png';
+import Footer from '../components/Footer';
 
 function UsersProfileScreen() {
   const [userProfileData, setUserProfileData] = useState({});
@@ -73,6 +74,7 @@ function UsersProfileScreen() {
         statistic4={userProfileData.statistic4}
       />
       <LibraryView viewIcon1={view1} viewIcon2={view2} />
+      <Footer/>
 
       {/* Render user posts */}
       <div className="post-section">

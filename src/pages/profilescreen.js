@@ -3,7 +3,6 @@ import Parse from 'parse';
 import './profilescreen.css';
 import Header from '../components/Header.js';
 import Icon from '../Ressources/Icons/Mail.png';
-import UserImage from '../Ressources/UserProfilePicture/UserImage.png';
 import UserProfile from '../components/UserProfile.js';
 import Statistics from '../components/Statistics.js';
 import LibraryView from '../components/LibraryView.js';
@@ -11,7 +10,7 @@ import view1 from '../Ressources/Icons/View_Grid.png';
 import view2 from '../Ressources/Icons/View_List.png';
 import mapIcon from '../Ressources/Icons/Location.png';
 import arrow from '../Ressources/Icons/Chevron_down.png';
-import FollowButton from '../components/followButton';
+import Footer from '../components/Footer';
 
 
 function ProfileScreen() {
@@ -77,10 +76,9 @@ function ProfileScreen() {
         mapIcon={mapIcon}
         location={userProfileData.location}
         arrow={arrow}
-        text="Follow"
         
       />
-      <FollowButton/>
+
       <Statistics
         statistic1={userProfileData.statistic1}
         statistic2={userProfileData.statistic2}
@@ -88,6 +86,7 @@ function ProfileScreen() {
         statistic4={userProfileData.statistic4}
       />
       <LibraryView viewIcon1={view1} viewIcon2={view2} />
+      <Footer/>
 
       {/* Render user posts */}
       <div className="post-section">
