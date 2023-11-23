@@ -5,7 +5,7 @@ import Profilescreen from './pages/profilescreen.js'
 import Homepage from './pages/Homepage.js'
 import HellesPost from './pages/HellesPost.js'
 import LoginScreen from './pages/LoginScreen.js';
-
+import FilterPage from './pages/FilterPage.js';
 // Import Parse minified version
 import Parse from 'parse';
 
@@ -22,9 +22,10 @@ function App() {
     <div className="App">
     <BrowserRouter>
       <Routes>
-          <Route path="/home" element={<Homepage />} />
+          <Route path="/home/:tags?" exact element={<Homepage />} />
           <Route path="/profile" element={<Profilescreen />} />
           <Route path="/post" element={<HellesPost />} />
+          <Route path="/filter" element={<FilterPage />} />
           <Route path="/login" element={<LoginScreen />} />
           <Route index element={<Navigate to="/login" />} />
       </Routes>

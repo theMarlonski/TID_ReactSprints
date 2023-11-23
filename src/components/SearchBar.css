@@ -1,0 +1,42 @@
+/* SearchBar.css */
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.heading {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+input {
+  font-size: 16px;
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.search-button {
+  font-size: small;
+  padding: 2px;
+  background-color: hsl(166, 49%, 86%);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  /* Ensure the icon is vertically aligned and has proper styling */
+  display: flex;
+  align-items: center;
+}
+
+/* Style the icon within the button */
+
+.icon {
+  color: hsl(0, 0%, 100%);
+  vertical-align: middle;
+  margin-bottom: 2px;
+}
+
+.search-button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}

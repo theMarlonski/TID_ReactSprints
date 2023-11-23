@@ -1,0 +1,43 @@
+/*filterPage.css*/
+filterPage.css
+body {
+  margin-bottom: 55px;
+}
+
+.title-text p {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px; /* Øget fontstørrelsen for bedre læsbarhed */
+  font-weight: 400; /* Ændret fontvægten for at gøre teksten mere synlig */
+  line-height: 14px;
+  color: #858e96;
+  margin-left: 10px;
+  padding-top: 20px;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh; /* Øget min-height for mere plads til indholdet */
+  padding: 36px; /* Øget padding for mere plads rundt om indholdet */
+}
+
+
+.Filter h1 {
+  font-size: 18px; /* Juster denne værdi efter behov for at ændre filteroverskriftens fontstørrelse */
+  align-items: center;
+  font-family: 'Ubuntu', sans-serif;
+
+}
+
+.SearchBar h1 {
+  font-size: 18px; /* Juster denne værdi efter behov for at ændre filteroverskriftens fontstørrelse */
+  align-items: center;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.Filter {
+  margin-top: 30px; /* Ændret margin-top for at justere afstanden efter behov */
+  /* Yderligere styling efter behov */
+}
