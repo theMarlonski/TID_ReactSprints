@@ -11,6 +11,9 @@ import view2 from '../Ressources/Icons/View_List.png';
 import mapIcon from '../Ressources/Icons/Location.png';
 import arrow from '../Ressources/Icons/Chevron_down.png';
 import Footer from '../components/Footer';
+import UsersOwnPost from '../components/UserOwnPost';
+import UsersImage1 from '../Ressources/UsersOwnProfilePosts/castello-sforzesco.jpg';
+import UsersImage2 from '../Ressources/UsersOwnProfilePosts/italianRestaurant.jpg';
 
 
 function ProfileScreen() {
@@ -86,6 +89,19 @@ function ProfileScreen() {
         statistic4={userProfileData.statistic4}
       />
       <LibraryView viewIcon1={view1} viewIcon2={view2} />
+      <div className="post-section">
+        <UsersOwnPost
+          usersImage={UsersImage1}
+          postText="Sforza Castle (Castello Sforzesco): This historic castle houses several museums, including art galleries....."
+          tags={["Milano", "Italy", "Food and drinks", "Culture", "Sightseeing", "City trips"]}
+          /> 
+        <UsersOwnPost
+          usersImage={UsersImage2}
+          postText="Trattoria Bella Vita is a famous and popular pasta restaurant..."
+          tags={["Milano", "Italy", "Food and drinks", "Culture", "Sightseeing", "City trips", "Budget friendly"]}
+          /> 
+      
+</div>
       <Footer/>
 
       {/* Render user posts */}
