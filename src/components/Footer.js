@@ -15,11 +15,11 @@ function Footer() {
         <Link to="/create-post">
           <div className="footer-icon"><img src={Create} alt="CreatePost" /></div>
         </Link>
-        <Link to="/search">
+         <Link to="/profile"> {/* this should link to the search icon */}
           <div className="footer-icon"><img src={Search} alt="SearchIcon" /></div>
         </Link>
-        <Link to="/profile">
-          <div className="profile-icon"><img src={ProfilePic} alt="UserProfile" /></div>
+        <Link to="/ownProfile">
+          <div className="profile-icon"><img src={ProfilePic} alt="UsersOwnProfile" /></div>
         </Link>
       </footer>
     );
