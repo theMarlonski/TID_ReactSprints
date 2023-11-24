@@ -1,75 +1,65 @@
-import React, { useState } from 'react';
-import Header from '../components/Header.js';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Icon from '../Ressources/Icons/NotificationBell.svg';
+import './FilteredHomePage.css';
+import Header from '../components/Header.js';
 import HomePost from '../components/HomePost.js';
-import ProfileImage1 from '../Ressources/ProfilePictures/LisaPicture.png';
-import ProfileImage2 from '../Ressources/ProfilePictures/LouisPicture.svg';
-import ProfileImage3 from '../Ressources/ProfilePictures/OguzPicture.png';
-import PostImage1 from '../Ressources/HomepagePosts/Norway.jpg';
-import PostImage2 from '../Ressources/HomepagePosts/Istanbul.jpg';
-import PostImage3 from '../Ressources/HomepagePosts/Milano.jpg';
 import Footer from '../components/Footer.js';
 import NotificationIcon from '../Ressources/Icons/NotificationBell.svg';
-import './Homepage.css';
 import NoResultsPopup from '../components/NoResultsPopup.js';
+import Parse from 'parse';
 
-function HomePage() {
-  const { tags } = useParams(); // Hent tags fra URL-parametrene
-  const selectedTags = tags ? tags.split(',') : []; // Hvis tags eksisterer, konverter til et array
-  const posts = [
-    {
-      profileImage: ProfileImage1,
-      name: "Lisa 🇳🇴",
-      postImage: PostImage1,
-      flag: "🇳🇴",
-      tags: ["Norway", "Travel", "Nature", "Mountains", "Fjords"]
-    },
-    {
-      profileImage: ProfileImage2,
-      name: "Oguz 🇹🇷",
-      postImage: PostImage2,
-      flag: "🇹🇷",
-      tags: ["Istanbul", "Travel", "City", "Culture", "History"]
-    },
-    {
-      profileImage: ProfileImage3,
-      name: "Louis 🇬🇧",
-      postImage: PostImage3,
-      flag: "🇮🇹",
-      tags: ["Milano", "Travel", "City", "Culture", "History"]
+function FilteredHomePage() {
+  const { tags } = useParams();
+  const selectedTags = tags ? tags.split(',') : [];
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const Post = Parse.Object.extend('Post');
+      const postQuery = new Parse.Query(Post);
+      postQuery.include('user');
+      postQuery.descending('createdAt');
+
+      const postsResult = await postQuery.find();
+      setPosts(postsResult);
+      setLoading(false); // Set loading to false once data is fetched
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      setLoading(false); // Handle errors by setting loading to false
     }
-  ];
+  };
 
-  console.log("Selected Tags:", selectedTags); // Tilføjet log
-  console.log("All Posts:", posts); // Tilføjet log
-
-
-  // Filtrer opslagene baseret på de aktiverede tags
   const filteredPosts = posts.filter(post => {
-    return tagMatches(selectedTags, post.tags);
+    return tagMatches(selectedTags, post.get('tags'));
   });
 
-  console.log("Filtered Posts:", filteredPosts); // Tilføjet log
-  const noResults = filteredPosts.length === 0;
+  if (loading) {
+    // Display loading spinner or message while data is being fetched
+    return <p>Loading...</p>;
+  }
 
-  const [showPopup, setShowPopup] = useState(false);
-  if (noResults) {
+  if (filteredPosts.length === 0) {
     return <NoResultsPopup />;
   }
 
   return (
     <div>
-      <Header IconPath={Icon} />
+      <Header IconPath={NotificationIcon} />
       <div className="post-section">
         {filteredPosts.map((post, index) => (
           <HomePost
-            key={index}
-            profileImage={post.profileImage}
-            name={post.name}
-            postImage={post.postImage}
-            flag={post.flag}
-            tags={post.tags}
+            key={post.id}
+            postId={post.id}
+            profileImage={post.get('user').get('profilePicture')?.url()} 
+            name={`${post?.get('user').get('username')} ${post.get('user').get('localCountry')}`} 
+            postImage={post.get('mainImage').url()} 
+            flag={post.get('country')?.split(' ')[0]}
+            tags={post.get('tags')}
           />
         ))}
       </div>
@@ -78,11 +68,8 @@ function HomePage() {
   );
 
   function tagMatches(selectedTags, postTags) {
-    console.log("Selected Tags:", selectedTags); // Tilføjet log
-    console.log("Post Tags:", postTags); // Tilføjet log
     return selectedTags.every(tag => postTags.includes(tag));
   }
-};
+}
 
-
-export default HomePage;
+export default FilteredHomePage;

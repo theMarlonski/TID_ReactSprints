@@ -51,7 +51,9 @@ function HomePage() {
       <div className="post-section">
       {posts.map((post) => (
           <HomePost
+            key={post.id}
             postId={post.id}
+            profileId={post.get('user').id}
             profileImage={post.get('user').get('profilePicture')?.url()} 
             name={`${post?.get('user').get('username')} ${post.get('user').get('localCountry')}`} 
             postImage={post.get('mainImage').url()} 

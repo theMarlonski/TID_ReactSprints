@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Parse from 'parse';
-import TopBarPost from '../components/TopBarPost.js';
-import Footer from '../components/Footer.js';
-import PostDetail from '../components/PostDetail.js';
-import FollowNameContainer from '../components/FollowNameContainer.js';
-import DetailedPostDescription from '../components/DetailedPostDescription.js';
-import Tags from '../components/Tags.js';
+import TopBarPost from '../../components/TopBarPost.js';
+import Footer from '../../components/Footer.js';
+import PostDetail from '../../components/PostDetail.js';
+import FollowNameContainer from '../../components/FollowNameContainer.js';
+import DetailedPostDescription from '../../components/DetailedPostDescription.js';
+import Tags from '../../components/Tags.js';
 
 function HellesPost({ params }) {
   console.log('HellesPost:', params);

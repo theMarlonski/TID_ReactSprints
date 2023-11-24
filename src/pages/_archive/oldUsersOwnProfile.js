@@ -1,21 +1,21 @@
 import React from 'react';
 import './profilescreen.css';
-import Header from '../components/Header.js';
+import Header from '../../components/Header.js';
 import Icon from '../Ressources/Icons/Settings.png';
 import UserImage from '../Ressources/ProfilePictures/SalomonRusso.png'
-import OwnProfile from '../components/OwnProfile.js';
-import Statistics from '../components/Statistics.js';
-import LibraryView from '../components/LibraryView.js';
+import OwnProfile from '../../components/OwnProfile.js';
+import Statistics from '../../components/Statistics.js';
+import LibraryView from '../../components/LibraryView.js';
 import view1 from '../Ressources/Icons/View_Grid.png';
 import view2 from '../Ressources/Icons/View_List.png';
 import mapIcon from '../Ressources/Icons/Location.png';
 import UsersImage1 from '../Ressources/UsersOwnProfilePosts/castello-sforzesco.jpg'
 import UsersImage2 from '../Ressources/UsersOwnProfilePosts/italianRestaurant.jpg'
 
-import UsersOwnPost from '../components/UserOwnPost.js';
-import Footer from '../components/Footer.js';
+import UsersOwnPost from '../../components/UserOwnPost.js';
+import Footer from '../../components/Footer.js';
 import './Homepage.css';
-import SlideBar from '../components/SlideBar';
+import SlideBar from '../../components/SlideBar.js';
 
 //i need to take the username from my database and put it in the name prop of the OwnProfile component
 

@@ -46,7 +46,7 @@ function Footer() {
             <div className="footer-icon"><img src={Search} alt="SearchIcon" /></div>
           </button>
         </Link>
-        <Link to="/profile">
+        <Link to="/own-profile">
           <div className="profile-icon">
             <img src={profilePic._url} alt="UserProfile" />
           </div>

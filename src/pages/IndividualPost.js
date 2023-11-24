@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react'; // Import useEffect and useState
 import Parse from 'parse';
 import TopBarPost from '../components/TopBarPost.js';
-import Footer from '../components/Footer';
+import Footer from '../components/Footer.js';
 import PostDetail from '../components/PostDetail.js';
-import FollowNameContainer from '../components/FollowNameContainer';
-import DetailedPostDescription from '../components/DetailedPostDescription';
-import DetailedTags from '../components/detailedPostTags';
-import { useLocation } from 'react-router-dom'; // Import useLocation hook
+import FollowNameContainer from '../components/FollowNameContainer.js';
+import DetailedPostDescription from '../components/DetailedPostDescription.js';
+import DetailedTags from '../components/detailedPostTags.js';
+import { useLocation } from 'react-router-dom';
+import './IndividualPost.css';
 
-function HellesPost() {
+function IndividualPost() {
   const location = useLocation();
   const detailedPostImage = location.state?.detailedPostImage;
   const tags = location.state?.tags;
@@ -57,7 +58,7 @@ function HellesPost() {
   };
 
   return (
-    <div className="helles-body">
+    <div className="post-body">
       <PostDetail DetailedPost={detailedPostImage || ''} additionalImages={additionalImageUrls} />
       <TopBarPost PostCountry={country} />
       <FollowNameContainer ProfilePost={profilepic} ProfileName={name} />
@@ -68,4 +69,4 @@ function HellesPost() {
   );
 }
 
-export default HellesPost;
+export default IndividualPost;

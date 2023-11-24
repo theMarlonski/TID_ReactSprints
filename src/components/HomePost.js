@@ -8,7 +8,9 @@ import "./HomePost.css";
 function HomePost(props) {
   return (
     <div className="post-container">
-      <Profile profileImage={props.profileImage} name={props.name} />
+      <Link to={`/profile/${props.profileId}`} state={{profileId: props.profileId}}>
+        <Profile profileImage={props.profileImage} name={props.name} />
+      </Link>
       <Link to={`/post/${props.postId}`} state={{ detailedPostImage: props.postImage, 
                                                   tags: props.tags, 
                                                   name:props.name, 

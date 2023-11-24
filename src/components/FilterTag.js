@@ -60,7 +60,7 @@ function FilterTag({ tags, heading, onSelectedItems }) {
         </button>
       </div>
     </>
-  );
+  ); 
 }
 
 export default FilterTag;
