@@ -63,6 +63,7 @@ function HomePage() {
       <Footer />
     </div>
   );
-}
+};
+
 
 export default HomePage;

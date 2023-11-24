@@ -22,3 +22,12 @@ footer {
   height: 35px;
   border-radius: 50%;
 }
+
+.footer-logo:hover{
+  box-shadow: 0 ;
+}
+
+.filter_button{
+  border: none;
+  background-color: #fff;
+}

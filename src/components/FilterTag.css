@@ -1,0 +1,44 @@
+/*FilterTags.css*/
+.filterTags {
+    list-style: none;
+    padding: 0;
+  }
+  
+  /* Stilarter for filterTags-tag og aktive tags */
+  .filterTags-tag {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  
+    /* Standard baggrundsfarve */
+    background-color: hsl(0, 0%, 100%);
+  }
+  
+  /* Stilarter for aktive tags */
+  .filterTags-tag.active {
+    background-color: hsl(166, 49%, 86%);
+    color: hsl(218, 15%, 31%);
+  }
+
+  .Buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .Add-Filter,
+  .Reset {
+    font-size: medium;
+    padding: 14px;
+    background-color: hsl(218, 15%, 31%);
+    color: hsl(0, 0%, 100%);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 8px; /* Just to provide some space between buttons */
+  }

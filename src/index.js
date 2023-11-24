@@ -15,3 +15,13 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+const linkElement = document.createElement('link');
+
+// Sæt attributterne for link-elementet
+linkElement.rel = 'stylesheet';
+linkElement.href = 'https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap';
+
+// Tilføj link-elementet til head-sektionen
+document.head.appendChild(linkElement);
+
