@@ -1,0 +1,14 @@
+button {
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin: 0px 5px 0px 0;
+  font-size: 14px;
+  line-height: 16px;
+  color: #424B5A;
+  display: flex;
+  align-items: center;
+  background-color: rgb(173, 216, 206);
+  border-style: none;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 600;
+}

@@ -39,7 +39,7 @@ function HellesPost({ params }) {
       <PostDetail DetailedPost={post.get('mainImage').url()} />
       <TopBarPost PostCountryFlag={post.get('country').substring(0, 4)} PostCountry={post.get('country').substring(4)} />
       <FollowNameContainer
-        ProfilePost={post.get('user').get('profilePicture').url()}
+        ProfilePost={post.get('user').get('profilePicture').url()} 
         ProfileName={`${post.get('user').get('username')} ${post.get('user').get('localCountry')}`}
       />
       <DetailedPostDescription

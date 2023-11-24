@@ -7,7 +7,9 @@ import HellesPost from './pages/HellesPost.js';
 import LoginScreen from './pages/LoginScreen.js';
 import CreatePost from './pages/CreatePost.js';
 import FilterPage from './pages/FilterPage.js';
+import UsersOwnProfile from './pages/UsersownProfile.js';
 import Parse from 'parse';
+import OldUsersOwnProfile from './pages/oldUsersOwnProfile.js';
 
 const PARSE_APPLICATION_ID = 'W3xindcqxv4pJAkwRbaU6TYStdgnwTSHtxH6ZzeC';
 const PARSE_JAVASCRIPT_KEY = 'ITw9eJTL50dCk4LqWKCbZZ8g8aGsCzJ6PHozvXRF';
@@ -18,9 +20,11 @@ Parse.serverURL = PARSE_HOST_URL;
 function App() {
   return (
     <div className="App">
-    <BrowserRouter>
-      <Routes>
+      <BrowserRouter>
+        <Routes>
           <Route path="/home/:tags?" exact element={<Homepage />} />
+          <Route path="/oldOwnProfile" element={<OldUsersOwnProfile />} />
+          <Route path="/ownProfile" element={<UsersOwnProfile />} />
           <Route path="/profile" element={<Profilescreen />} />
           <Route path="/post/:postId" element={<HellesPost />} />
           <Route path="/filter" element={<FilterPage />} />
