@@ -7,9 +7,7 @@ function FollowNameContainer(props) {
   return (
     <div className="follow-section">
       <div className="name">
-        <Link to="/profile">
           <img src={props.ProfilePost} alt="ProfilePostDetail" />
-        </Link>
         <p>{props.ProfileName}</p>
       </div>
       <div className="button">
