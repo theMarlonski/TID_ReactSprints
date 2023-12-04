@@ -109,9 +109,9 @@ function CreatePost() {
   
     // Set values for the columns
     const currentUser = Parse.User.current();
-    const userPointer = new Parse.Object('_User');
-    userPointer.id = currentUser.id;
-    Post.set('user', userPointer); // Set the user field as a Pointer
+    const userQuery = new Parse.Object('_User');
+    userQuery.id = currentUser.id;
+    Post.set('user', userQuery);
     Post.set('country', country);
     Post.set('description', description);
   
