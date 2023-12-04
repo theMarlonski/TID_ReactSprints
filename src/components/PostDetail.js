@@ -1,6 +1,7 @@
 import React from 'react';
 import './PostDetail.css';
-import SlideBar from './SlideBar.js';
+import SlideBar from './SlideBar';
+import Multiple from "../Ressources/Icons/multiplepics.svg";
 
 function PostDetail(props) {
   // Log the image URLs to check if they're correct
@@ -32,7 +33,6 @@ function PostDetail(props) {
     return (
       <div className="image-section-single">
         {mainImage}
-        <SlideBar />
       </div>
     );
   }
