@@ -25,21 +25,24 @@ function CreatePost() {
   const navigate = useNavigate();
 
   const predefinedTags = [
-    'Adventure Travel',
-    'Cultural Exploration',
-    'Travel Tips',
-    'Backpacking',
-    'Local Cuisine',
-    'Scenic Views',
-    'Historical Sites',
-    'City Exploration',
-    'Budget Travel',
-    'Nature Retreat',
-    'Photography',
-    'Reflections',
-    'Local Encounters',
-    'Wellness Travel',
-    'Off the Beaten Path',
+    "Outdoor",
+    "City trips",
+    "Backpacking",
+    "Ski Trips",
+    "Wellness",
+    "Yoga",
+    "Food & Drinks",
+    "Party",
+    "Hiking",
+    "Adventure",
+    "Countryside",
+    "Travel",
+    "Nature",
+    "Mountains",
+    "Fjords",
+    "City",
+    "Culture",
+    "History"
   ];
 
   const [specialTag, setSpecialTag] = useState([]);

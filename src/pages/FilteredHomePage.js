@@ -34,6 +34,12 @@ function FilteredHomePage() {
     }
   };
 
+  const tagMatches = (selectedTags, postTags) => {
+    // Modify the logic to check if the country name is included in the tags
+    const countryName = selectedTags.find(tag => !tag.includes('-')); // Assuming the country tag doesn't include '-'
+    return countryName ? postTags.some(tag => tag.includes(countryName)) : true;
+  };
+
   const filteredPosts = posts.filter(post => {
     return tagMatches(selectedTags, post.get('tags'));
   });
@@ -48,7 +54,7 @@ function FilteredHomePage() {
   }
 
   return (
-    <div>
+    <div className='home-body'>
       <Header IconPath={NotificationIcon} />
       <div className="post-section">
         {filteredPosts.map((post, index) => (
@@ -66,10 +72,6 @@ function FilteredHomePage() {
       <Footer />
     </div>
   );
-
-  function tagMatches(selectedTags, postTags) {
-    return selectedTags.every(tag => postTags.includes(tag));
-  }
 }
 
 export default FilteredHomePage;

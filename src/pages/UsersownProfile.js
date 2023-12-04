@@ -77,7 +77,6 @@ function UsersProfileScreen() {
         statistic4={userProfileData.statistic4}
       />
       <LibraryView viewIcon1={view1} viewIcon2={view2} />
-      <Footer />
 
       <div className="post-section">
         {userPosts.length > 0 && userPosts.map((post, index) => (
@@ -89,6 +88,7 @@ function UsersProfileScreen() {
           />
         ))}
       </div>
+      <Footer />
     </div>
   );
 }
