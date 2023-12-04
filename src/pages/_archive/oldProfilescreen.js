@@ -1,17 +1,17 @@
 import './profilescreen.css';
-import Header from '../components/Header.js';
-import Icon from '../Ressources/Icons/Mail.png';
+import Header from '../../components/Header.js';
+import Icon from '../Ressources/Icons/Settings.png';
 import UserImage from '../Ressources/UserProfilePicture/UserImage.png'
-import UserProfile from '../components/UserProfile.js';
-import Statistics from '../components/Statistics.js';
-import LibraryView from '../components/LibraryView.js';
+import UserProfile from '../../components/UserProfile.js';
+import Statistics from '../../components/Statistics.js';
+import LibraryView from '../../components/LibraryView.js';
 import view1 from '../Ressources/Icons/View_Grid.png';
 import view2 from '../Ressources/Icons/View_List.png';
 import mapIcon from '../Ressources/Icons/Location.png';
 import arrow from '../Ressources/Icons/Chevron_down.png';
 
 
-function profileScreen() {
+function oldProfileScreen() {
   return (
     <div className="profilescreen-container">
       <Header
@@ -40,4 +40,5 @@ function profileScreen() {
 }
 
 
-export default profileScreen;
+export default oldProfileScreen;
+ 

@@ -1,0 +1,30 @@
+.tagsDetailed {
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 16px;
+  margin-bottom: 10px;
+  padding-left: 0;
+  margin-left: 10px;
+  max-height: max-content;
+  }
+  
+.tagsDetailed .tag {
+    padding: 5px 10px; /* Adjust padding */
+    border-radius: 20px; /* Rounded corners for tags */
+    margin: 0px 5px 5px 0; /* Adjust margins */
+    font-size: 14px; /* Adjust font size */
+    line-height: 16px;
+    color: #000; /* Black text color */
+    display: flex; /* Align text and dot */
+    align-items: center;
+    background-color: rgb(173, 216, 206); /* Tag color in rgb */
+    color: rgb(66, 75, 90);
+    white-space: nowrap; /* Prevent tag text from wrapping */
+  }
+  
+  .tagsDetailed .tag::before {
+    content: '•'; /* Unicode for bullet (•) */
+    margin-right: 5px; /* Adjust margin */
+    font-size: 45px; /* Adjust bullet size */
+    color: rgb(66, 75, 90);
+  }

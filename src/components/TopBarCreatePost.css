@@ -1,0 +1,45 @@
+.top-bar-create {
+    background-color: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+.icon-container {
+    border-radius: 9px; /* Rounded corners for the chevron button */
+    padding: 5px;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center; /* Center horizontally */
+    height: 17px; /* Set the height */
+    width: 17px; /* Set the width to make it quadratic */
+    top: 35px; /* Set the top position as needed */
+    left: 15px;
+  }
+  
+.icon img {
+    font-size: 14px;
+    color: #2D323E;
+    vertical-align: middle;
+    margin-bottom: 2px;
+  }
+  
+.share-button button{
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    top: 35px; /* Set the top position as needed */
+    right: 15px;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 7px 20px;
+    background-color: #ADD8CE;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  }

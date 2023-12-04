@@ -1,0 +1,39 @@
+/* Styles for the container of the small images */
+.small-images-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+/* Styles for each small image */
+.small-images-container .small-image {
+  display: flex;
+  margin: 0px 3px;
+  align-items: center;
+  white-space: nowrap;
+  position: relative; /* Add relative positioning */
+}
+
+.small-image img {
+  border-radius: 5px;
+  width: 70px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.remove-button-small {
+  align-self: flex-end; /* Align the button to the right */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: red;
+  font-size: 15px;
+}
+
+.remove-button-small:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,71 @@
+.create-tags {
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 16px;
+  margin-bottom: 10px;
+  padding-left: 0;
+  max-height: max-content;
+}
+
+.create-tags .tag {
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin: 0 5px 5px 0;
+  font-size: 14px;
+  line-height: 16px;
+  color: #424B5A;
+  display: flex;
+  align-items: center;
+  background-color: rgb(203, 237, 229);
+  white-space: nowrap;
+  height: 17px; /* Set a fixed height for tags */
+}
+
+.create-tags .tag.special-tag {
+  background-color: rgb(203, 237, 229);
+  color: rgb(66, 75, 90, 0.75);
+}
+
+.create-tags .tag.special-tag input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: rgb(66, 75, 90);
+  font-size: 14px;
+  line-height: 16px;
+  width: 100%;
+}
+
+.create-tags .tag.user-defined {
+  position: relative;
+  background-color: rgb(254, 218, 144);
+  height: 17px; /* Set the same fixed height as predefined tags */
+}
+
+.create-tags .tag.user-defined .delete-tag {
+  position: relative;
+  cursor: pointer;
+  margin-left: 5px;
+  color: #ec0b0b;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.create-tags .tag::before,
+.create-tags .tag.special-tag::before {
+  content: '•';
+  margin-right: 5px;
+  font-size: 16px; /* Adjust bullet size */
+  color: rgb(66, 75, 90);
+}
+
+.create-tags .tag.special-tag::before {
+  content: '+';
+  font-size: 14px; /* Adjust bullet size */
+  color: rgb(66, 75, 90, 75);
+  padding-bottom: 2px;
+}
+
+.create-tags .tag.selected {
+  background-color: rgb(254, 218, 144);
+}
