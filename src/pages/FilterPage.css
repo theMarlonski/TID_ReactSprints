@@ -1,7 +1,8 @@
 /*filterPage.css*/
-filterPage.css
-body {
+
+.filter-body {
   margin-bottom: 55px;
+  margin-top: 20px;
 }
 
 .title-text p {

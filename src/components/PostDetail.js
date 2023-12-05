@@ -1,7 +1,5 @@
 import React from 'react';
 import './PostDetail.css';
-import SlideBar from './SlideBar';
-import Multiple from "../Ressources/Icons/multiplepics.svg";
 
 function PostDetail(props) {
   // Log the image URLs to check if they're correct
@@ -25,7 +23,6 @@ function PostDetail(props) {
             <img key={index} src={additionalImage.url()} alt={`AdditionalImage${index}`} onError={() => console.error(`Error loading AdditionalImage${index}`)} />
           ))}
         </div>
-        <SlideBar />
       </div>
     );
   } else {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; 
 import './FollowNameContainer.css'; 
-import Helle from '../Ressources/ProfilePictures/HellePicture.png';
 
 function FollowNameContainer(props) {
   return (

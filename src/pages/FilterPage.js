@@ -37,7 +37,7 @@ function FilterPage() {
   };
 
   return (
-    <div>
+    <div className="filter-body">
       <Header IconPath={Icon} />
       <div className="content-container">
         <div className="SearchBar">

@@ -8,6 +8,7 @@ import DetailedPostDescription from '../components/DetailedPostDescription.js';
 import DetailedTags from '../components/detailedPostTags.js';
 import { useLocation } from 'react-router-dom';
 import './IndividualPost.css';
+import SlideBar from '../components/SlideBar.js';
 
 function IndividualPost() {
   const location = useLocation();
@@ -60,6 +61,7 @@ function IndividualPost() {
   return (
     <div className="post-body">
       <PostDetail DetailedPost={detailedPostImage || ''} additionalImages={additionalImageUrls} />
+      {additionalImageUrls.length > 0 && <SlideBar />}
       <TopBarPost PostCountry={country} />
       <FollowNameContainer ProfilePost={profilepic} ProfileName={name} />
       <DetailedPostDescription PostDescription={description} />

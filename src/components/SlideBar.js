@@ -5,7 +5,9 @@ import Multiple from "../Ressources/Icons/multiplepics.svg";
 function SlideBar() {
     return (
         <div className="slide-bar">
-            <img src={Multiple} alt="Multiple" />
+            <div className='multiple'>
+                <img src={Multiple} alt="Multiple" />
+            </div>
         </div>
     );
   }
