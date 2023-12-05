@@ -13,8 +13,6 @@ import mapIcon from '../Ressources/Icons/Location.png';
 import arrow from '../Ressources/Icons/Chevron_down.png';
 import Footer from '../components/Footer.js';
 import UsersOwnPost from '../components/UserOwnPost.js';
-import UsersImage1 from '../Ressources/UsersOwnProfilePosts/castello-sforzesco.jpg';
-import UsersImage2 from '../Ressources/UsersOwnProfilePosts/italianRestaurant.jpg';
 
 function ProfileScreen() {
   const [userProfileData, setUserProfileData] = useState({});
@@ -80,7 +78,7 @@ function ProfileScreen() {
         statistic4={userProfileData.statistic4}
       />
       <LibraryView viewIcon1={view1} viewIcon2={view2} />
-      <div className="post-section">
+      <div className="user-posts">
         {userPosts.map((post, index) => (
           <UsersOwnPost
             key={index}

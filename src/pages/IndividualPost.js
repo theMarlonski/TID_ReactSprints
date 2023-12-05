@@ -15,6 +15,7 @@ function IndividualPost() {
   const detailedPostImage = location.state?.detailedPostImage;
   const tags = location.state?.tags;
   const name = location.state?.name;
+  const profileId = location.state?.profileId;
   const profilepic = location.state?.profileImage;
 
   // Use state to store the description
@@ -63,7 +64,7 @@ function IndividualPost() {
       <PostDetail DetailedPost={detailedPostImage || ''} additionalImages={additionalImageUrls} />
       {additionalImageUrls.length > 0 && <SlideBar />}
       <TopBarPost PostCountry={country} />
-      <FollowNameContainer ProfilePost={profilepic} ProfileName={name} />
+      <FollowNameContainer ProfilePost={profilepic} ProfileName={name} profileId={profileId}/>
       <DetailedPostDescription PostDescription={description} />
       <DetailedTags tags={tags} />
       <Footer />

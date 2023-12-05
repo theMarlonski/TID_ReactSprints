@@ -78,7 +78,7 @@ function UsersProfileScreen() {
       />
       <LibraryView viewIcon1={view1} viewIcon2={view2} />
 
-      <div className="post-section">
+      <div className="user-posts">
         {userPosts.length > 0 && userPosts.map((post, index) => (
           <UserOwnPost
             key={index}
