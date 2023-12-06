@@ -48,6 +48,7 @@ function UsersProfileScreen() {
       postQuery.equalTo('user', currentUser);
       postQuery.descending('createdAt');
       const userPostsResult = await postQuery.find();
+      const distinctCountries = [...new Set(userPostsResult.map(post => post.get('country')))];
   
       console.log('User Posts Result:', userPostsResult);
   
@@ -55,8 +56,10 @@ function UsersProfileScreen() {
 
       // Get Statistics
       const postCount = userPostsResult.length;
+      const placesVisitedCount = distinctCountries.length;
       const followerCount = await followerQuery.count();
       const followingCount = await followingQuery.count();
+      
 
   
       setUserProfileData({
@@ -64,7 +67,7 @@ function UsersProfileScreen() {
         name: userProfileResult.get('username'),
         location: userProfileResult.get('localCountryName'),
         statistic1: postCount,
-        statistic2: userProfileResult.get('placesVisited'),
+        statistic2: placesVisitedCount,
         statistic3: followerCount,
         statistic4: followingCount,
       });
