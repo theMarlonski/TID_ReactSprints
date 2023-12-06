@@ -37,6 +37,14 @@ function ProfileScreen() {
       followerQuery.equalTo('following', profileId);
       followingQuery.equalTo('follower', profileId);
 
+      // Use Parse.User object directly when querying the Following class
+      const profileUser = new Parse.User();
+      profileUser.id = profileId;
+
+      followerQuery.equalTo('following', profileUser);
+      followingQuery.equalTo('follower', profileUser);
+
+
       // Get the URL for the profile picture
       const profileImage = userProfileResult.get('profilePicture');
       const profileImageUrl = profileImage.url();
