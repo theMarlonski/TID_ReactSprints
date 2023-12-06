@@ -81,10 +81,14 @@ function ProfileScreen() {
       <div className="user-posts">
         {userPosts.map((post, index) => (
           <UsersOwnPost
-            key={index}
-            usersImage={post.get('mainImage').url()}  // Update this based on your Parse schema
+            key={post.id}
+            usersImage={post.get('mainImage').url()}  
             postText={post.get('description')}
-            tags={post.get('tags')}  // Update this based on your Parse schema
+            tags={post.get('tags')}
+            postId={post.id}
+            profileId={post.get('user').id}
+            profileImage={post.get('user').get('profilePicture')?.url()} 
+            name={`${post?.get('user').get('username')} ${post.get('user').get('localCountry')}`} 
           />
         ))}
       </div>
