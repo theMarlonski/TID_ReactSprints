@@ -81,10 +81,14 @@ function UsersProfileScreen() {
       <div className="user-posts">
         {userPosts.length > 0 && userPosts.map((post, index) => (
           <UserOwnPost
-            key={index}
+            key={post.id}
             usersImage={post.get('mainImage').url()}  
             postText={post.get('description')}
             tags={post.get('tags')}
+            postId={post.id}
+            profileId={post.get('user').id}
+            profileImage={post.get('user').get('profilePicture')?.url()} 
+            name={`${post?.get('user').get('username')} ${post.get('user').get('localCountry')}`} 
           />
         ))}
       </div>
