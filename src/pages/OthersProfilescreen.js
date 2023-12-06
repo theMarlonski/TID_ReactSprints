@@ -31,6 +31,12 @@ function ProfileScreen() {
       userProfileQuery.equalTo('objectId', profileId);
       const userProfileResult = await userProfileQuery.first();
 
+      const Following = Parse.Object.extend('Following');
+      const followerQuery = new Parse.Query(Following);
+      const followingQuery = new Parse.Query(Following);
+      followerQuery.equalTo('following', profileId);
+      followingQuery.equalTo('follower', profileId);
+
       // Get the URL for the profile picture
       const profileImage = userProfileResult.get('profilePicture');
       const profileImageUrl = profileImage.url();
@@ -43,15 +49,20 @@ function ProfileScreen() {
       postQuery.descending('createdAt');
       const userPostsResult = await postQuery.find();
 
+      // Get Statistics
+      const postCount = userPostsResult.length;
+      const followerCount = await followerQuery.count();
+      const followingCount = await followingQuery.count();
+
       // Set the fetched data in state
       setUserProfileData({
         profileImage: profileImageUrl,
         name: userProfileResult.get('username'),
         location: userProfileResult.get('localCountryName'),
-        statistic1: userProfileResult.get('post'),
+        statistic1: postCount,
         statistic2: userProfileResult.get('placesVisited'),
-        statistic3: userProfileResult.get('followers'),
-        statistic4: userProfileResult.get('following'),
+        statistic3: followerCount,
+        statistic4: followingCount,
       });
 
       setUserPosts(userPostsResult);

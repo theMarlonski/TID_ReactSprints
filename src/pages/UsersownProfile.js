@@ -34,6 +34,13 @@ function UsersProfileScreen() {
       const userProfileQuery = new Parse.Query(UserProfile);
       userProfileQuery.equalTo('objectId', currentUser.id);
       const userProfileResult = await userProfileQuery.first();
+
+      const Following = Parse.Object.extend('Following');
+      const followerQuery = new Parse.Query(Following);
+      const followingQuery = new Parse.Query(Following);
+      followerQuery.equalTo('following', currentUser);
+      followingQuery.equalTo('follower', currentUser);
+
   
       const Post = Parse.Object.extend('Post');
       const postQuery = new Parse.Query(Post);
@@ -45,15 +52,21 @@ function UsersProfileScreen() {
       console.log('User Posts Result:', userPostsResult);
   
       setUserPosts(userPostsResult);
+
+      // Get Statistics
+      const postCount = userPostsResult.length;
+      const followerCount = await followerQuery.count();
+      const followingCount = await followingQuery.count();
+
   
       setUserProfileData({
         profileImage: userProfileResult.get('profilePicture').url(),
         name: userProfileResult.get('username'),
         location: userProfileResult.get('localCountryName'),
-        statistic1: userProfileResult.get('post'),
+        statistic1: postCount,
         statistic2: userProfileResult.get('placesVisited'),
-        statistic3: userProfileResult.get('followers'),
-        statistic4: userProfileResult.get('following'),
+        statistic3: followerCount,
+        statistic4: followingCount,
       });
     } catch (error) {
       console.error('Error fetching user data:', error);

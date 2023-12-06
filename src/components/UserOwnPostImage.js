@@ -1,5 +1,4 @@
 import React from "react";
-import SlideBar from "./SlideBar";
 import './UsersOwnPostImage.css';
 import './PostDetail.css';
 
@@ -14,3 +13,5 @@ function UsersImage(props) {
 }
 
 export default UsersImage;
+
+
