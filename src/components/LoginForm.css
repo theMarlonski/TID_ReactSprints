@@ -27,6 +27,7 @@
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    margin-left: 32vw;
   }
 
   .error-message {
