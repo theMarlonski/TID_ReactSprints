@@ -21,7 +21,7 @@ function ProfileScreen() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [profileId]);
 
   const fetchData = async () => {
     try {
@@ -67,6 +67,7 @@ function ProfileScreen() {
       // Set the fetched data in state
       setUserProfileData({
         profileImage: profileImageUrl,
+        profileId: profileId, 
         name: userProfileResult.get('username'),
         location: userProfileResult.get('localCountryName'),
         statistic1: postCount,
@@ -86,6 +87,7 @@ function ProfileScreen() {
       <Header IconPath={Icon} />
       <UserProfile
         profileImage={userProfileData.profileImage}
+        profileId={userProfileData.profileId}
         name={userProfileData.name}
         mapIcon={mapIcon}
         location={userProfileData.location}
@@ -100,7 +102,7 @@ function ProfileScreen() {
       />
       <LibraryView viewIcon1={view1} viewIcon2={view2} />
       <div className="user-posts">
-        {userPosts.map((post, index) => (
+        {userPosts.map((post) => (
           <UsersOwnPost
             key={post.id}
             usersImage={post.get('mainImage').url()}  
