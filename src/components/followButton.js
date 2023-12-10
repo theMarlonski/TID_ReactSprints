@@ -37,24 +37,30 @@ const FollowButton = (props) => {
   }, [props.profileId]);
 
 
+  useEffect(() => {
+    console.log('isFollowing state changed:', isFollowing);
+  }, [isFollowing]);
+
   const handleFollowToggle = async () => {
     const currentUser = Parse.User.current();
     const Following = Parse.Object.extend('Following');
-    const followerPointer = Parse.User.createWithoutData(currentUser.id);
+    const followerId = currentUser.id; // Get the current user ID
+  
+    const followerPointer = Parse.User.createWithoutData(followerId);
     const followingPointer = Parse.User.createWithoutData(props.profileId);
-
+  
     if (isFollowing) {
       // Unfollow: Delete the follow row
       const query = new Parse.Query(Following);
       query.equalTo('follower', followerPointer);
       query.equalTo('following', followingPointer);
-
+  
       try {
         const result = await query.first();
         if (result) {
           await result.destroy();
           setIsFollowing(false);
-          console.log(`User ${currentUser.id} unfollowed user ${props.profileId}`);
+          console.log(`User ${followerId} unfollowed user ${props.profileId}`);
         }
       } catch (error) {
         console.error('Error unfollowing:', error);
@@ -64,11 +70,12 @@ const FollowButton = (props) => {
       const newFollow = new Following();
       newFollow.set('follower', followerPointer);
       newFollow.set('following', followingPointer);
-
+  
       try {
         await newFollow.save();
+        console.log(`User ${followerId} followed user ${props.profileId}`);
         setIsFollowing(true);
-        console.log(`User ${currentUser.id} followed user ${props.profileId}`);
+        console.log(`isFollowing state after update: ${isFollowing}`);
       } catch (error) {
         console.error('Error following:', error);
       }
