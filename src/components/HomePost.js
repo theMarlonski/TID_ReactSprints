@@ -15,7 +15,8 @@ function HomePost(props) {
                                                   tags: props.tags, 
                                                   name:props.name, 
                                                   profileImage:props.profileImage,
-                                                  postId: props.postId }}>
+                                                  postId: props.postId, 
+                                                  profileId: props.profileId}}>
         <Image postImage={props.postImage} flag={props.flag} />
       </Link>
       <Tags tags={props.tags} />

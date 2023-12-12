@@ -13,8 +13,6 @@ import mapIcon from '../Ressources/Icons/Location.png';
 import arrow from '../Ressources/Icons/Chevron_down.png';
 import Footer from '../components/Footer.js';
 import UsersOwnPost from '../components/UserOwnPost.js';
-import UsersImage1 from '../Ressources/UsersOwnProfilePosts/castello-sforzesco.jpg';
-import UsersImage2 from '../Ressources/UsersOwnProfilePosts/italianRestaurant.jpg';
 
 function ProfileScreen() {
   const [userProfileData, setUserProfileData] = useState({});
@@ -23,7 +21,7 @@ function ProfileScreen() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [profileId]);
 
   const fetchData = async () => {
     try {
@@ -32,6 +30,20 @@ function ProfileScreen() {
       const userProfileQuery = new Parse.Query(UserProfile);
       userProfileQuery.equalTo('objectId', profileId);
       const userProfileResult = await userProfileQuery.first();
+
+      const Following = Parse.Object.extend('Following');
+      const followerQuery = new Parse.Query(Following);
+      const followingQuery = new Parse.Query(Following);
+      followerQuery.equalTo('following', profileId);
+      followingQuery.equalTo('follower', profileId);
+
+      // Use Parse.User object directly when querying the Following class
+      const profileUser = new Parse.User();
+      profileUser.id = profileId;
+
+      followerQuery.equalTo('following', profileUser);
+      followingQuery.equalTo('follower', profileUser);
+
 
       // Get the URL for the profile picture
       const profileImage = userProfileResult.get('profilePicture');
@@ -44,16 +56,24 @@ function ProfileScreen() {
       postQuery.equalTo('user', userProfileResult);
       postQuery.descending('createdAt');
       const userPostsResult = await postQuery.find();
+      const distinctCountries = [...new Set(userPostsResult.map(post => post.get('country')))];
+
+      // Get Statistics
+      const postCount = userPostsResult.length;
+      const placesVisitedCount = distinctCountries.length;
+      const followerCount = await followerQuery.count();
+      const followingCount = await followingQuery.count();
 
       // Set the fetched data in state
       setUserProfileData({
         profileImage: profileImageUrl,
+        profileId: profileId, 
         name: userProfileResult.get('username'),
         location: userProfileResult.get('localCountryName'),
-        statistic1: userProfileResult.get('post'),
-        statistic2: userProfileResult.get('placesVisited'),
-        statistic3: userProfileResult.get('followers'),
-        statistic4: userProfileResult.get('following'),
+        statistic1: postCount,
+        statistic2: placesVisitedCount,
+        statistic3: followerCount,
+        statistic4: followingCount,
       });
 
       setUserPosts(userPostsResult);
@@ -67,6 +87,7 @@ function ProfileScreen() {
       <Header IconPath={Icon} />
       <UserProfile
         profileImage={userProfileData.profileImage}
+        profileId={userProfileData.profileId}
         name={userProfileData.name}
         mapIcon={mapIcon}
         location={userProfileData.location}
@@ -80,13 +101,17 @@ function ProfileScreen() {
         statistic4={userProfileData.statistic4}
       />
       <LibraryView viewIcon1={view1} viewIcon2={view2} />
-      <div className="post-section">
-        {userPosts.map((post, index) => (
+      <div className="user-posts">
+        {userPosts.map((post) => (
           <UsersOwnPost
-            key={index}
-            usersImage={post.get('mainImage').url()}  // Update this based on your Parse schema
+            key={post.id}
+            usersImage={post.get('mainImage').url()}  
             postText={post.get('description')}
-            tags={post.get('tags')}  // Update this based on your Parse schema
+            tags={post.get('tags')}
+            postId={post.id}
+            profileId={post.get('user').id}
+            profileImage={post.get('user').get('profilePicture')?.url()} 
+            name={`${post?.get('user').get('username')} ${post.get('user').get('localCountry')}`} 
           />
         ))}
       </div>

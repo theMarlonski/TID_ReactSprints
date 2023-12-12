@@ -12,6 +12,7 @@
 .empty-image img {
   width: 100%;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .remove-button {
