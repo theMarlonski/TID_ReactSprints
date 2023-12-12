@@ -5,15 +5,28 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # Running the project
 
-To run the project, first, clone the repository to your local machine. Once the repository is cloned, navigate to the folder.
-When in the folder, use the command 'npm start' (make sure that npm is installed on your machine).
+Running the Project
 
-This should launch the application in the browser window, prompting you to log in. For this, you can use our test user account:
+To get started, follow these steps:
 
-Username: TestUser
-Password: Locals
-
-After logging in, you will be redirected to the homepage, and you can freely explore our platform.
-
-Enjoy!
+Clone the Repository:
+- Open a terminal window.
+- Clone the repository to your local machine using git clone [repository-url].
+- Navigate to the project folder: cd [project-folder].
+Install Dependencies:
+- Ensure you have Node.js and npm installed.
+- Run npm install to install project dependencies.
+Start the Application:
+- Launch the development server with npm start.
+- The application will open in your default web browser.
+Login with Test User:
+- On the login page, use the following test user credentials:
+- Username: TestUser
+- Password: Locals
+Explore the Platform:
+- After logging in, you'll be redirected to the homepage.
+- Explore various features and functionalities of the platform.
+Enjoy:
+- Feel free to navigate through the application and test its components.
+Note: Ensure that npm is installed on your machine before running the project.
 
