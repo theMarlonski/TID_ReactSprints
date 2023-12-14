@@ -18,8 +18,7 @@
   align-items: center;
   background-color: rgb(203, 237, 229);
   white-space: nowrap;
-  height: 17px;
-  cursor: pointer;
+  height: 17px; /* Set a fixed height for tags */
 }
 
 .create-tags .tag.special-tag {
@@ -56,14 +55,13 @@
 .create-tags .tag.special-tag::before {
   content: '•';
   margin-right: 5px;
-  font-size: 45px; /* Adjust bullet size */
+  font-size: 16px; /* Adjust bullet size */
   color: rgb(66, 75, 90);
 }
 
 .create-tags .tag.special-tag::before {
   content: '+';
-  font-size: 20px; /* Adjust bullet size */
-  font-weight: bold;
+  font-size: 14px; /* Adjust bullet size */
   color: rgb(66, 75, 90, 75);
   padding-bottom: 2px;
 }

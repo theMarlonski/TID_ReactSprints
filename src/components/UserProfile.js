@@ -5,8 +5,6 @@ import FollowButton from './followButton'; // Adjust the path based on your proj
 import './UserProfile.css';
 
 function UserProfile(props) {
-  console.log('UserProfile - profileId:', props.profileId);
-
   return (
     <div className="profile-container">
       <img className="profile-image" src={props.profileImage} alt="Profile Image" />
@@ -15,7 +13,7 @@ function UserProfile(props) {
         <div className="location-and-follow">
           <img className="map-icon" src={props.mapIcon} alt="map icon" />
           <div className="location">{props.location}</div>
-          <FollowButton profileId={props.profileId}/>
+          <FollowButton />
         </div>
       </div>
     </div>
