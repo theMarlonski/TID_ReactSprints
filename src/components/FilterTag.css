@@ -24,15 +24,15 @@
     color: hsl(218, 15%, 31%);
   }
 
-  .buttons {
+  .Buttons {
     display: flex;
     justify-content: center;
     align-items: center;
     
   }
   
-  .add-filter,
-  .reset {
+  .Add-Filter,
+  .Reset {
     font-size: medium;
     padding: 14px;
     background-color: hsl(218, 15%, 31%);

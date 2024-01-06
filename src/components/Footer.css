@@ -8,19 +8,26 @@ footer {
   bottom: 0px;
   width: 100%;
   border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
-.footer-icon img {
+.footer-logo img {
     color: #424B5A;
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
+    width: 5px;
+    height: 5px;
   }
 
 .profile-icon img {
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  cursor: pointer;
+}
+
+.footer-logo:hover{
+  box-shadow: 0 ;
+}
+
+.filter_button{
+  border: none;
+  background-color: #fff;
 }

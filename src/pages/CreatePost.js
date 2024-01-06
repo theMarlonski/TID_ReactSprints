@@ -25,24 +25,21 @@ function CreatePost() {
   const navigate = useNavigate();
 
   const predefinedTags = [
-    "Outdoor",
-    "City trips",
-    "Backpacking",
-    "Ski Trips",
-    "Wellness",
-    "Yoga",
-    "Food & Drinks",
-    "Party",
-    "Hiking",
-    "Adventure",
-    "Countryside",
-    "Travel",
-    "Nature",
-    "Mountains",
-    "Fjords",
-    "City",
-    "Culture",
-    "History"
+    'Adventure Travel',
+    'Cultural Exploration',
+    'Travel Tips',
+    'Backpacking',
+    'Local Cuisine',
+    'Scenic Views',
+    'Historical Sites',
+    'City Exploration',
+    'Budget Travel',
+    'Nature Retreat',
+    'Photography',
+    'Reflections',
+    'Local Encounters',
+    'Wellness Travel',
+    'Off the Beaten Path',
   ];
 
   const [specialTag, setSpecialTag] = useState([]);
@@ -112,9 +109,9 @@ function CreatePost() {
   
     // Set values for the columns
     const currentUser = Parse.User.current();
-    const userQuery = new Parse.Object('_User');
-    userQuery.id = currentUser.id;
-    Post.set('user', userQuery);
+    const userPointer = new Parse.Object('_User');
+    userPointer.id = currentUser.id;
+    Post.set('user', userPointer); // Set the user field as a Pointer
     Post.set('country', country);
     Post.set('description', description);
   

@@ -8,14 +8,12 @@ import DetailedPostDescription from '../components/DetailedPostDescription.js';
 import DetailedTags from '../components/detailedPostTags.js';
 import { useLocation } from 'react-router-dom';
 import './IndividualPost.css';
-import SlideBar from '../components/SlideBar.js';
 
 function IndividualPost() {
   const location = useLocation();
   const detailedPostImage = location.state?.detailedPostImage;
   const tags = location.state?.tags;
   const name = location.state?.name;
-  const profileId = location.state?.profileId;
   const profilepic = location.state?.profileImage;
 
   // Use state to store the description
@@ -62,9 +60,8 @@ function IndividualPost() {
   return (
     <div className="post-body">
       <PostDetail DetailedPost={detailedPostImage || ''} additionalImages={additionalImageUrls} />
-      {additionalImageUrls.length > 0 && <SlideBar />}
       <TopBarPost PostCountry={country} />
-      <FollowNameContainer ProfilePost={profilepic} ProfileName={name} profileId={profileId}/>
+      <FollowNameContainer ProfilePost={profilepic} ProfileName={name} />
       <DetailedPostDescription PostDescription={description} />
       <DetailedTags tags={tags} />
       <Footer />

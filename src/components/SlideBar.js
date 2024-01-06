@@ -1,13 +1,15 @@
 import React from 'react';
 import './SlideBar.css';
-import Multiple from "../Ressources/Icons/multiplepics.svg";
+import Circle from "../Ressources/Icons/Circle.svg";
+import ColoredCircle from "../Ressources/Icons/ColoredCircle.svg";
 
 function SlideBar() {
     return (
         <div className="slide-bar">
-            <div className='multiple'>
-                <img src={Multiple} alt="Multiple" />
-            </div>
+            <div className="icon-slide"><img src={ColoredCircle} alt="filledIn" /></div>
+            <div className="icon-slide"><img src={Circle} alt="notfilled" /></div>
+            <div className="icon-slide"><img src={Circle} alt="notfilled" /></div>
+            <div className="icon-slide"><img src={Circle} alt="notfilled" /></div>
         </div>
     );
   }

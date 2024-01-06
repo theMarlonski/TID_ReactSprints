@@ -3,7 +3,7 @@ import Parse from 'parse';
 import Header from '../components/Header.js';
 import HomePost from '../components/HomePost.js';
 import Footer from '../components/Footer.js';
-import Icon from '../Ressources/Icons/NotificationBell.svg';
+import NotificationIcon from '../Ressources/Icons/NotificationBell.svg';
 import './Homepage.css';
 
 function HomePage() {
@@ -46,8 +46,8 @@ function HomePage() {
   };
 
   return (
-    <div className='home-body'>
-      <Header IconPath={Icon} />
+    <div>
+      <Header iconPath={NotificationIcon} />
       <div className="post-section">
       {posts.map((post) => (
           <HomePost
