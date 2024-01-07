@@ -11,23 +11,30 @@
     flex-direction: column;
     align-items: start;
     padding: 0px 15px;
+    cursor: pointer;
   }
 
   .name img {
     position: relative;
-    max-width: 50px;
-    max-height: 50px;
+    width: 50px;
+    height: 50px;
     object-fit: cover;
     border-radius: 50%;
   }
   
-  .name p {
+  .name .text {
     margin: 0;
     padding-top: 5px;
     font-weight: 700; /* bold font weight for text */
     font-size: 16px;
     line-height: 18px;
     letter-spacing: 0;
+    color: #0C0F14;
+  }
+
+  .name a {
+    text-decoration: none;
+    color: inherit;
   }
 
   .button {
@@ -37,6 +44,7 @@
     margin-right: 10px; /* Adjust the margin to add space to the right */
     height: 15px; /* Set the height */
     text-align: center;
+    cursor: pointer;
   }
   
   .button p {

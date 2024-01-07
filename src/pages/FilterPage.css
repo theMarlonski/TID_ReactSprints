@@ -1,7 +1,8 @@
 /*filterPage.css*/
-filterPage.css
-body {
+
+.filter-body {
   margin-bottom: 55px;
+  margin-top: 30px;
 }
 
 .title-text p {
@@ -20,7 +21,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 60vh; /* Øget min-height for mere plads til indholdet */
-  padding: 36px; /* Øget padding for mere plads rundt om indholdet */
+  padding: 20px; /* Øget padding for mere plads rundt om indholdet */
 }
 
 
