@@ -10,7 +10,7 @@ function Statistics(props) {
       </div>
       <div className="statistic-box">
         <div className="statistic">{props.statistic2}</div>
-        <div className="statistic-text">Places visited</div>
+        <div className="statistic-text">Local Countries</div>
       </div>
       <div className="statistic-box">
         <div className="statistic">{props.statistic3}</div>

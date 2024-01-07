@@ -1,5 +1,10 @@
+.home-body{
+    margin-bottom: 65px;
+    margin-top: 45px;
+  }
+
 .post-section {
+    background-color: rgb(215, 215, 215);
     margin-top: 45px;
     margin-bottom: -17px;
-    background-color: rgb(215, 215, 215);
 }

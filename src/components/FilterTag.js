@@ -51,11 +51,11 @@ function FilterTag({ tags, heading, onSelectedItems }) {
           </li>
         ))}
       </ul>
-      <div className="Buttons">
-        <button className="Reset" onClick={resetTags}>
+      <div className="buttons">
+        <button className="reset" onClick={resetTags}>
           Reset
         </button>
-        <button className="Add-Filter" onClick={addFilter}>
+        <button className="add-filter" onClick={addFilter}>
           Add filter
         </button>
       </div>

@@ -42,9 +42,7 @@ function Footer() {
           <div className="footer-icon"><img src={Create} alt="CreatePost" /></div>
         </Link>
         <Link to={`/filter`}>
-          <button className="filter_button">
             <div className="footer-icon"><img src={Search} alt="SearchIcon" /></div>
-          </button>
         </Link>
         <Link to="/own-profile">
           <div className="profile-icon">

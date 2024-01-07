@@ -5,7 +5,6 @@ import "./FilterPage.css"; // Opdateret import
 import Header from '../components/Header.js';
 import Footer from '../components/Footer.js';
 import Icon from '../Ressources/Icons/NotificationBell.svg';
-import { ReactComponent as SearchIcon } from "../Ressources/Icons/SearchIcon.svg";
 import SearchBar from "../components/SearchBar.js";
 
 function FilterPage() {
@@ -38,7 +37,7 @@ function FilterPage() {
   };
 
   return (
-    <div>
+    <div className="filter-body">
       <Header IconPath={Icon} />
       <div className="content-container">
         <div className="SearchBar">

@@ -1,6 +1,5 @@
 import React from 'react';
 import './PostDetail.css';
-import SlideBar from './SlideBar.js';
 
 function PostDetail(props) {
   // Log the image URLs to check if they're correct
@@ -24,7 +23,6 @@ function PostDetail(props) {
             <img key={index} src={additionalImage.url()} alt={`AdditionalImage${index}`} onError={() => console.error(`Error loading AdditionalImage${index}`)} />
           ))}
         </div>
-        <SlideBar />
       </div>
     );
   } else {
@@ -32,7 +30,6 @@ function PostDetail(props) {
     return (
       <div className="image-section-single">
         {mainImage}
-        <SlideBar />
       </div>
     );
   }
